@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Wattify_Frontend": {
+    "ArceValera": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wattify-frontend",
+            "outputPath": "dist/arce-valera",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Wattify_Frontend:build:production"
+              "browserTarget": "ArceValera:build:production"
             },
             "development": {
-              "browserTarget": "Wattify_Frontend:build:development"
+              "browserTarget": "ArceValera:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Wattify_Frontend:build"
+            "browserTarget": "ArceValera:build"
           }
         },
         "test": {
@@ -98,6 +98,6 @@
     }
   },
   "cli": {
-    "analytics": "527cc71f-0716-4834-9a01-137771fa900a"
+    "analytics": "c98bb1c5-1563-43f5-a009-7a80945e1fcd"
   }
 }

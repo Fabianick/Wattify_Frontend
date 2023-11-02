@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-membresia',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./membresia.component.css']
 })
 export class MembresiaComponent {
-
+  constructor(public route:ActivatedRoute) {}
 }
