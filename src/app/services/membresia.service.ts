@@ -27,6 +27,7 @@ export class MembresiaService {
     return this.listaCambio.asObservable();
   }
 
+  //hu3 y hu4
   listId(id: number) {
     return this.http.get<Membresia>(`${this.url}/${id}`);
   }
