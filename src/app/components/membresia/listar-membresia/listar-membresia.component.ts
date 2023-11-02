@@ -15,7 +15,7 @@ export class ListarMembresiaComponent implements OnInit{
   displayedColumns: string[] = [
     'codigo',
     'tipo',
-    'fechaInicial',
+    'fechaInicio',
     'fechaFinal',
     'precio',
     'accion01',

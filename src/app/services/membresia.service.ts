@@ -28,15 +28,15 @@ export class MembresiaService {
   }
 
   //hu3 y hu4
-    listId(id: number) {
+  listId(id: number) {
     return this.http.get<Membresia>(`${this.url}/${id}`);
-    }
-    update(u: Membresia) {
+  }
+  update(u: Membresia) {
     return this.http.put(this.url, u);
-    }
-    delete(id: number) {
+  }
+  delete(id: number) {
     return this.http.delete(`${this.url}/${id}`);
-    }
+  }
     
 }
 
