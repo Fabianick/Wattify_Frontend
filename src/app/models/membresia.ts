@@ -5,4 +5,3 @@ export class Membresia{
     fechaFin: Date=new Date(Date.now())
     precio: number=0.0
   }
-  

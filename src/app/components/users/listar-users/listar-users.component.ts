@@ -15,6 +15,7 @@ export class ListarUsersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   displayedColumns: string[] = [
     'codigo',
+    'username',
     'nombres',
     'apellidos',
     'genero',
@@ -22,7 +23,7 @@ export class ListarUsersComponent implements OnInit {
     'dni',
     'celular',
     'accion01',
-    'accion02'
+    'accion02',
   ];
   constructor(private uS:UsersService){}
   ngOnInit(): void {
