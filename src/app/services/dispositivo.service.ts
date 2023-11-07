@@ -3,42 +3,42 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Dispositivo } from '../models/dispositivo';
 import { HttpClient } from '@angular/common/http';
-const base_url=environment.base
+const base_url = environment.base;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DispositivoService {
-  private url=`${base_url}/dispositivo`
-  private listacambio=new Subject<Dispositivo[]>();
+  private url = `${base_url}/dispositivo`;
+  private listacambio = new Subject<Dispositivo[]>();
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  list(){
-    return this.http.get<Dispositivo[]>(this.url);				
-
+  list() {
+    return this.http.get<Dispositivo[]>(this.url);
   }
 
-  insert(dispo:Dispositivo){
+  insert(dispo: Dispositivo) {
     return this.http.post(this.url, dispo);
-
   }
 
-  setList(listaNueva:Dispositivo[]){
+  setList(listaNueva: Dispositivo[]) {
     this.listacambio.next(listaNueva);
   }
 
-  getList(){
+  getList() {
     return this.listacambio.asObservable();
   }
 
   listId(id: number) {
     return this.http.get<Dispositivo>(`${this.url}/${id}`);
-    }
-    update(u: Dispositivo) {
+  }
+
+  update(u: Dispositivo) {
     return this.http.put(this.url, u);
-    }
-    delete(id: number) {
+  }
+
+  delete(id: number) {
     return this.http.delete(`${this.url}/${id}`);
-    }
+  }
 }
