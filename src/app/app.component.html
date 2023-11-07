@@ -4,7 +4,7 @@
   <button mat-button [matMenuTriggerFor]="menuMembresias">Membresias</button>
   <button mat-button [matMenuTriggerFor]="menuTDispositivo">Tipo Dispositivo</button>
   <button mat-button [matMenuTriggerFor]="menuDispositivo">Dispositivos</button>
-
+  <button mat-button [matMenuTriggerFor]="menuMetoPago">Metodo Pago</button>
 
 </mat-toolbar>
 
@@ -29,6 +29,11 @@
 <mat-menu #menuDispositivo="matMenu">
   <button mat-menu-item routerLink="/dispositivos/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/dispositivos/lista">Listar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+<mat-menu #menuMetoPago="matMenu">
+  <button mat-menu-item routerLink="/metodo-pago/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/metodo-pago/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 

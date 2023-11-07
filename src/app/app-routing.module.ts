@@ -11,6 +11,9 @@ import { ListarDispositivoComponent } from './components/tdispositivo/listar-dis
 import { DispositivosComponent } from './components/dispositivos/dispositivos.component';
 import { CreaeditaDispositivosComponent } from './components/dispositivos/creaedita-dispositivos/creaedita-dispositivos.component';
 import { ListarDispositivosComponent } from './components/dispositivos/listar-dispositivos/listar-dispositivos.component';
+import { MetodoPagoComponent } from './components/metodo-pago/metodo-pago.component';
+import { CrearMetodoPagoComponent } from './components/metodo-pago/crear-metodo-pago/crear-metodo-pago.component';
+import { ListarMetodoPagoComponent } from './components/metodo-pago/listar-metodo-pago/listar-metodo-pago.component';
 
 const routes: Routes = [
   {
@@ -37,15 +40,20 @@ const routes: Routes = [
       { path: 'ediciones/:id', component: CreaeditaDispositivoComponent }, //listar
     ],
   },
-
   {
     path: 'dispositivos',component: DispositivosComponent,children: [
       { path: 'nuevo', component: CreaeditaDispositivosComponent }, //registrar
       { path: 'lista', component: ListarDispositivosComponent }, //listar
       { path: 'ediciones/:id', component: CreaeditaDispositivosComponent }, //listar
     ],
+  },
+  {
+    path: 'metodo-pago',component: MetodoPagoComponent,children: [ //cambio de rutas
+      { path: 'nuevo', component: CrearMetodoPagoComponent }, //registrar
+      { path: 'lista', component: ListarMetodoPagoComponent}, //listar
+      { path: 'ediciones/:id', component: CrearMetodoPagoComponent }, //actualizar
+    ],
   }
-
 ];
 
 @NgModule({

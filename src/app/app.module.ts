@@ -28,6 +28,9 @@ import { CreaeditaDispositivoComponent } from './components/tdispositivo/creaedi
 import { DispositivosComponent } from './components/dispositivos/dispositivos.component';
 import { ListarDispositivosComponent } from './components/dispositivos/listar-dispositivos/listar-dispositivos.component';
 import { CreaeditaDispositivosComponent } from './components/dispositivos/creaedita-dispositivos/creaedita-dispositivos.component';
+import { MetodoPagoComponent } from './components/metodo-pago/metodo-pago.component';
+import { CrearMetodoPagoComponent } from './components/metodo-pago/crear-metodo-pago/crear-metodo-pago.component';
+import { ListarMetodoPagoComponent } from './components/metodo-pago/listar-metodo-pago/listar-metodo-pago.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import { CreaeditaDispositivosComponent } from './components/dispositivos/creaed
     DispositivosComponent,
     ListarDispositivosComponent,
     CreaeditaDispositivosComponent,
+    MetodoPagoComponent,
+    CrearMetodoPagoComponent,
+    ListarMetodoPagoComponent,
   ],
   imports: [
     BrowserModule,
