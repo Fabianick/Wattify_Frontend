@@ -25,6 +25,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TdispositivoComponent } from './components/tdispositivo/tdispositivo.component';
 import { ListarDispositivoComponent } from './components/tdispositivo/listar-dispositivo/listar-dispositivo.component';
 import { CreaeditaDispositivoComponent } from './components/tdispositivo/creaedita-dispositivo/creaedita-dispositivo.component';
+import { DispositivosComponent } from './components/dispositivos/dispositivos.component';
+import { ListarDispositivosComponent } from './components/dispositivos/listar-dispositivos/listar-dispositivos.component';
+import { CreaeditaDispositivosComponent } from './components/dispositivos/creaedita-dispositivos/creaedita-dispositivos.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { CreaeditaDispositivoComponent } from './components/tdispositivo/creaedi
     TdispositivoComponent,
     ListarDispositivoComponent,
     CreaeditaDispositivoComponent,
+    DispositivosComponent,
+    ListarDispositivosComponent,
+    CreaeditaDispositivosComponent,
   ],
   imports: [
     BrowserModule,

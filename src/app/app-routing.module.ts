@@ -8,6 +8,9 @@ import { CreaeditaUsersComponent } from './components/users/creaedita-users/crea
 import { TdispositivoComponent } from './components/tdispositivo/tdispositivo.component';
 import { CreaeditaDispositivoComponent } from './components/tdispositivo/creaedita-dispositivo/creaedita-dispositivo.component';
 import { ListarDispositivoComponent } from './components/tdispositivo/listar-dispositivo/listar-dispositivo.component';
+import { DispositivosComponent } from './components/dispositivos/dispositivos.component';
+import { CreaeditaDispositivosComponent } from './components/dispositivos/creaedita-dispositivos/creaedita-dispositivos.component';
+import { ListarDispositivosComponent } from './components/dispositivos/listar-dispositivos/listar-dispositivos.component';
 
 const routes: Routes = [
   {
@@ -31,7 +34,15 @@ const routes: Routes = [
     path: 'Tdispositivo',component: TdispositivoComponent,children: [
       { path: 'nuevo', component: CreaeditaDispositivoComponent }, //registrar
       { path: 'lista', component: ListarDispositivoComponent }, //listar
-    
+      { path: 'ediciones/:id', component: CreaeditaDispositivoComponent }, //listar
+    ],
+  },
+
+  {
+    path: 'dispositivos',component: DispositivosComponent,children: [
+      { path: 'nuevo', component: CreaeditaDispositivosComponent }, //registrar
+      { path: 'lista', component: ListarDispositivosComponent }, //listar
+      { path: 'ediciones/:id', component: CreaeditaDispositivosComponent }, //listar
     ],
   }
 
