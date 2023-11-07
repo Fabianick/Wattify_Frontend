@@ -22,6 +22,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { TdispositivoComponent } from './components/tdispositivo/tdispositivo.component';
+import { ListarDispositivoComponent } from './components/tdispositivo/listar-dispositivo/listar-dispositivo.component';
+import { CreaeditaDispositivoComponent } from './components/tdispositivo/creaedita-dispositivo/creaedita-dispositivo.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     UsersComponent,
     ListarUsersComponent,
     CreaeditaUsersComponent,
+    TdispositivoComponent,
+    ListarDispositivoComponent,
+    CreaeditaDispositivoComponent,
   ],
   imports: [
     BrowserModule,

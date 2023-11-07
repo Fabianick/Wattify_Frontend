@@ -2,6 +2,8 @@
   <mat-icon>menu</mat-icon>
   <button mat-button [matMenuTriggerFor]="menuUsuarios">Usuarios</button>
   <button mat-button [matMenuTriggerFor]="menuMembresias">Membresias</button>
+  <button mat-button [matMenuTriggerFor]="menuTDispositivo">Tipo Dispositivo</button>
+
 </mat-toolbar>
 
 <mat-menu #menuUsuarios="matMenu">
@@ -13,6 +15,12 @@
 <mat-menu #menuMembresias="matMenu">
   <button mat-menu-item routerLink="/membresias/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/membresias/lista">Listar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuTDispositivo="matMenu">
+  <button mat-menu-item routerLink="/Tdispositivo/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/Tdispositivo/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 
