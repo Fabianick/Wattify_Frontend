@@ -32,6 +32,13 @@ export class DispositivoService {
     return this.listacambio.asObservable();
   }
 
-
-
+  listId(id: number) {
+    return this.http.get<Dispositivo>(`${this.url}/${id}`);
+    }
+    update(u: Dispositivo) {
+    return this.http.put(this.url, u);
+    }
+    delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+    }
 }
