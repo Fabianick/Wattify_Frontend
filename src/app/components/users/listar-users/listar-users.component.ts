@@ -44,7 +44,7 @@ export class ListarUsersComponent implements OnInit {
     });
     });
     }
-    filter(en: any) {
-    this.datasource.filter = en.target.value.trim();
-    }
+  filter(en: any) {
+  this.datasource.filter = en.target.value.trim();
+  }
 }
