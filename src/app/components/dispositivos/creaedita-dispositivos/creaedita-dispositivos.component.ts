@@ -36,7 +36,7 @@ export class CreaeditaDispositivosComponent implements OnInit {
       this.init();
     });
     this.form = this.formBuilder.group({
-      id_Dispositivo: [''],
+      idDispositivo: [''],
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
       consumoHora: ['', [Validators.required]],
@@ -50,7 +50,7 @@ export class CreaeditaDispositivosComponent implements OnInit {
   }
   aceptar(): void {
     if (this.form.valid) {
-      this.dispositivo.id_Dispositivo = this.form.value.id_Dispositivo;
+      this.dispositivo.idDispositivo = this.form.value.idDispositivo;
       this.dispositivo.nombre = this.form.value.nombre;
       this.dispositivo.descripcion = this.form.value.descripcion;
       this.dispositivo.consumoHora =
@@ -89,7 +89,7 @@ export class CreaeditaDispositivosComponent implements OnInit {
     if (this.edicion) {
       this.dS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id_Dispositivo: new FormControl(data.id_Dispositivo),
+          id_Dispositivo: new FormControl(data.idDispositivo),
           nombre: new FormControl(data.nombre),
           descripcion: new FormControl(data.descripcion),
           consumoHora: new FormControl(data.consumoHora),

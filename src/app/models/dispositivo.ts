@@ -1,7 +1,7 @@
 import { TipoDispositivo } from "./tipoDispositivo";
 
 export class Dispositivo{
-    id_Dispositivo:number=0; 
+    idDispositivo:number=0;
     nombre:string="";
     descripcion:string="";
     consumoHora:number=0;

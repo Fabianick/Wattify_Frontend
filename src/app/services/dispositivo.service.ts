@@ -2,7 +2,7 @@ import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Dispositivo } from '../models/dispositivo';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 const base_url = environment.base;
 
 @Injectable({
@@ -15,11 +15,21 @@ export class DispositivoService {
   constructor(private http: HttpClient) {}
 
   list() {
-    return this.http.get<Dispositivo[]>(this.url);
+    let token = sessionStorage.getItem('token');
+    return this.http.get<Dispositivo[]>(this.url,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
   insert(dispo: Dispositivo) {
-    return this.http.post(this.url, dispo);
+    let token = sessionStorage.getItem('token');
+    return this.http.post(this.url, dispo,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
   setList(listaNueva: Dispositivo[]) {
@@ -31,14 +41,32 @@ export class DispositivoService {
   }
 
   listId(id: number) {
-    return this.http.get<Dispositivo>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Dispositivo>(`${this.url}/${id}`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
-  update(u: Dispositivo) {
-    return this.http.put(this.url, u);
+  update(dispo: Dispositivo) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.put(this.url, dispo,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 }

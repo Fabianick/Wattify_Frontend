@@ -2,8 +2,8 @@
   <mat-icon>menu</mat-icon>
   <button mat-button [matMenuTriggerFor]="menuUsuarios" *ngIf="validarRol()">Usuarios</button>
   <button mat-button [matMenuTriggerFor]="menuMembresias">Membresias</button>
-  <button mat-button [matMenuTriggerFor]="menuTDispositivo">Tipo Dispositivo</button>
-  <button mat-button [matMenuTriggerFor]="menuDispositivo">Dispositivos</button>
+  <button mat-button [matMenuTriggerFor]="menuTDispositivo" *ngIf="validarRol()">Tipo Dispositivo</button>
+  <button mat-button [matMenuTriggerFor]="menuDispositivo" *ngIf="validarRol()">Dispositivos</button>
   <button mat-button [matMenuTriggerFor]="menuMetoPago">Metodo Pago</button>
   <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 </mat-toolbar>
@@ -21,13 +21,13 @@
 </mat-menu>
 
 <mat-menu #menuTDispositivo="matMenu">
-  <button mat-menu-item routerLink="components/Tdispositivo/nuevo"*ngIf="role == 'USER'">Registrar</button>
+  <button mat-menu-item routerLink="components/Tdispositivo/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
   <button mat-menu-item routerLink="components/Tdispositivo/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 
 <mat-menu #menuDispositivo="matMenu">
-  <button mat-menu-item routerLink="components/dispositivos/nuevo"*ngIf="role == 'USER'">Registrar</button>
+  <button mat-menu-item routerLink="components/dispositivos/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
   <button mat-menu-item routerLink="components/dispositivos/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
