@@ -10,6 +10,17 @@
         <h2>Registro de Membresias</h2>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
 
+
+            <!--ID USUARIO-->
+            <mat-form-field class="example-full-width">
+                <mat-label>id del Usuario</mat-label>
+                <input matInput placeholder="Id" formControlName="user" />
+                <mat-error *ngIf="obtenerControlCampo('user')?.errors?.['required']">
+                    El Id del Usuario es obligatorio.
+                </mat-error>    
+            </mat-form-field>
+            
+            
             <!--ID-->
             <mat-form-field class="example-full-width" *ngIf="edicion">
                 <mat-label>idMembresia</mat-label>
@@ -44,8 +55,8 @@
                     La fecha inicial es obligatoria.
                 </mat-error>
             </mat-form-field>
-            
             <br />
+            
             <!--fecha-->
             <mat-form-field appearance="fill" class="example-full-width">
                 <input matInput placeholder="Ingrese fecha de Expiración" [matDatepicker]="pickerFin"
@@ -57,8 +68,8 @@
                     La fecha de expiración es obligatoria.
                 </mat-error>
             </mat-form-field>
-
             <br />
+            
     
              <!--precio-->
             <mat-form-field class="example-full-width">
@@ -67,6 +78,7 @@
             </mat-form-field>
             
             <br />
+            
             
             <!--BOTONES-->
             <div class="botones">

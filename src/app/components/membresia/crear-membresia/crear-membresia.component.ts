@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Membresia } from 'src/app/models/membresia';
 import { MembresiaService } from 'src/app/services/membresia.service';
 import * as moment from 'moment';
+import { Users } from 'src/app/models/users';
 
 @Component({
   selector: 'app-crear-membresia',
@@ -18,6 +19,7 @@ export class CrearMembresiaComponent implements OnInit {
   maxFecha: Date = moment().add(-1, 'days').toDate();
   edicion: boolean = false;
   id:number=0;
+  listaUsuario: Users[]=[];
   //hu3 y 4
   tipos: { value: string; viewValue: string }[] = [
     { value: 'Tipo1', viewValue: 'Tipo1' },
@@ -45,7 +47,10 @@ export class CrearMembresiaComponent implements OnInit {
       fechaInicio: ['', Validators.required],
       fechaFin: ['', [Validators.required]],
       precio: ['',[Validators.required]],
+      user: ['',[Validators.required]],
     });
+
+    
   }
   aceptar(): void {
     if (this.form.valid) {
@@ -54,6 +59,8 @@ export class CrearMembresiaComponent implements OnInit {
       this.membresia.fechaInicio = this.form.value.fechaInicio;
       this.membresia.fechaFin = this.form.value.fechaFin;
       this.membresia.precio = this.form.value.precio;
+      this.membresia.user.id = this.form.value.user;
+
 
       //inicio hu3 y 4
       if (this.edicion) {
@@ -92,6 +99,7 @@ export class CrearMembresiaComponent implements OnInit {
           fechaInicio: new FormControl(data.fechaInicio),
           fechaFin: new FormControl(data.fechaFin),
           precio: new FormControl(data.precio),
+          user: new FormControl(data.user)
         });
       });
     }

@@ -18,6 +18,7 @@ export class ListarMembresiaComponent implements OnInit{
     'fechaInicio',
     'fechaFinal',
     'precio',
+    'Usuario',
     'accion01',
     'accion02'
   ];
