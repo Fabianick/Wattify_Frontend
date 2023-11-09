@@ -9,18 +9,7 @@
     <div class="container" style="text-align: center">
         <h2>Registro de Membresias</h2>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
-
-
-            <!--ID USUARIO-->
-            <mat-form-field class="example-full-width">
-                <mat-label>id del Usuario</mat-label>
-                <input matInput placeholder="Id" formControlName="user" />
-                <mat-error *ngIf="obtenerControlCampo('user')?.errors?.['required']">
-                    El Id del Usuario es obligatorio.
-                </mat-error>    
-            </mat-form-field>
-            
-            
+           
             <!--ID-->
             <mat-form-field class="example-full-width" *ngIf="edicion">
                 <mat-label>idMembresia</mat-label>
@@ -28,6 +17,16 @@
             </mat-form-field>
 
             <br />
+
+            <!--ID USUARIO-->
+            <mat-form-field class="example-full-width">
+                <mat-label>Id Usuario</mat-label>
+                <input matInput placeholder="Id" formControlName="user" />
+                <mat-error *ngIf="obtenerControlCampo('user')?.errors?.['required']">
+                    El Id del Usuario es obligatorio.
+                </mat-error>    
+            </mat-form-field>
+            
             
             <!--tipo-->
              <mat-form-field class="example-full-width">
@@ -43,41 +42,32 @@
             </mat-form-field>
             
             <br />
+            
+             <!--precio-->
+             <mat-form-field class="example-full-width">
+                <mat-label>Precio</mat-label>
+                <input matInput formControlName="precio" [readonly]="true" />
+                <mat-hint>Precio en Soles</mat-hint>
+            </mat-form-field>
+            
+            <br />
 
             <!--fecha-->
             <mat-form-field appearance="fill" class="example-full-width">
-                <input matInput placeholder="Ingrese fecha de Inicio" [matDatepicker]="pickerInicio"
-                    formControlName="fechaInicio" />
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="pickerInicio"></mat-datepicker-toggle>
-                <mat-datepicker #pickerInicio></mat-datepicker>
-                <mat-error *ngIf="obtenerControlCampo('fechaInicio')?.errors?.['required']">
-                    La fecha inicial es obligatoria.
-                </mat-error>
+                <input matInput formControlName="fechaInicio" />
+                <mat-hint>Inicio de la Membresía</mat-hint>
             </mat-form-field>
             <br />
             
             <!--fecha-->
             <mat-form-field appearance="fill" class="example-full-width">
-                <input matInput placeholder="Ingrese fecha de Expiración" [matDatepicker]="pickerFin"
-                    formControlName="fechaFin" />
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="pickerFin"></mat-datepicker-toggle>
-                <mat-datepicker #pickerFin></mat-datepicker>
-                <mat-error *ngIf="obtenerControlCampo('fechaFin')?.errors?.['required']">
-                    La fecha de expiración es obligatoria.
-                </mat-error>
+                <input matInput formControlName="fechaFin" />
+                <mat-hint>Fin de la Membresia</mat-hint>
             </mat-form-field>
             <br />
             
     
-             <!--precio-->
-            <mat-form-field class="example-full-width">
-                <mat-label>Precio</mat-label>
-                <input matInput placeholder="Precio" formControlName="precio" />
-            </mat-form-field>
             
-            <br />
             
             
             <!--BOTONES-->
