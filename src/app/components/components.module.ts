@@ -27,8 +27,6 @@ import { CreaeditaDispositivosComponent } from './dispositivos/creaedita-disposi
 import { MetodoPagoComponent } from './metodo-pago/metodo-pago.component';
 import { CrearMetodoPagoComponent } from './metodo-pago/crear-metodo-pago/crear-metodo-pago.component';
 import { ListarMetodoPagoComponent } from './metodo-pago/listar-metodo-pago/listar-metodo-pago.component';
-import { ListarComprobanteComponent } from './comprobante-pago/listar-comprobante/listar-comprobante.component';
-import { ComprobantePagoComponent } from './comprobante-pago/comprobante-pago.component';
 
 
 @NgModule({
@@ -48,8 +46,6 @@ import { ComprobantePagoComponent } from './comprobante-pago/comprobante-pago.co
     MetodoPagoComponent,
     CrearMetodoPagoComponent,
     ListarMetodoPagoComponent,
-    ListarComprobanteComponent,
-    ComprobantePagoComponent,
   ],
   imports: [
     CommonModule,

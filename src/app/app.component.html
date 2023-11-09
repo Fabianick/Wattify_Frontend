@@ -1,47 +1,51 @@
-app.component.html:
-
-<mat-toolbar color="primary">
+<mat-toolbar *ngIf="verificar()">
   <mat-icon>menu</mat-icon>
-  <button mat-button [matMenuTriggerFor]="menuUsuarios">Usuarios</button>
+  <button mat-button [matMenuTriggerFor]="menuUsuarios" *ngIf="validarRol()">Usuarios</button>
   <button mat-button [matMenuTriggerFor]="menuMembresias">Membresias</button>
-  <button mat-button [matMenuTriggerFor]="menuTDispositivo">Tipo Dispositivo</button>
-  <button mat-button [matMenuTriggerFor]="menuDispositivo">Dispositivos</button>
+  <button mat-button [matMenuTriggerFor]="menuTDispositivo" *ngIf="validarRol()">Tipo Dispositivo</button>
+  <button mat-button [matMenuTriggerFor]="menuDispositivo" *ngIf="validarRol()">Dispositivos</button>
   <button mat-button [matMenuTriggerFor]="menuMetoPago">Metodo Pago</button>
-  <button mat-button [matMenuTriggerFor]="menuComprobantePago">Comprobante Pago</button>
-
+  <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 </mat-toolbar>
 
 <mat-menu #menuUsuarios="matMenu">
-  <button mat-menu-item routerLink="/usuarios/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/usuarios">Listar</button>
+  <button mat-menu-item routerLink="components/usuarios/nuevo"  *ngIf="role == 'USER'">Registrar</button>
+  <button mat-menu-item routerLink="components/usuarios">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 
 <mat-menu #menuMembresias="matMenu">
-  <button mat-menu-item routerLink="/membresias/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/membresias/lista">Listar</button>
+  <button mat-menu-item routerLink="components/membresias/nuevo" *ngIf="role == 'USER'">Registrar</button>
+  <button mat-menu-item routerLink="components/membresias/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 
 <mat-menu #menuTDispositivo="matMenu">
-  <button mat-menu-item routerLink="/Tdispositivo/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/Tdispositivo/lista">Listar</button>
+  <button mat-menu-item routerLink="components/Tdispositivo/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
+  <button mat-menu-item routerLink="components/Tdispositivo/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 
 <mat-menu #menuDispositivo="matMenu">
-  <button mat-menu-item routerLink="/dispositivos/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/dispositivos/lista">Listar</button>
+  <button mat-menu-item routerLink="components/dispositivos/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
+  <button mat-menu-item routerLink="components/dispositivos/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 <mat-menu #menuMetoPago="matMenu">
-  <button mat-menu-item routerLink="/metodo-pago/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/metodo-pago/lista">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
-<mat-menu #menuComprobantePago="matMenu">
-  <button mat-menu-item routerLink="/comprobante-pago/listar">Listar</button>
+  <button mat-menu-item routerLink="components/metodo-pago/nuevo"*ngIf="role == 'USER'">Registrar</button>
+  <button mat-menu-item routerLink="components/metodo-pago/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 
+<mat-menu #menuSalir="matMenu">
+  <button mat-menu-item routerLink="/login" (click)="cerrar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar sesión</span>
+
+  </button>
+  <button mat-menu-item >Rol:
+    <span>{{role}}</span>
+  </button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
 <router-outlet></router-outlet>
