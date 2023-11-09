@@ -37,7 +37,7 @@ export class CrearMembresiaComponent implements OnInit {
       this.edicion = data['id'] != null;
       this.init();
       });
-      
+
     //hu3 y hu4
     this.form = this.formBuilder.group({
       id_Membresia: [''],
@@ -70,7 +70,7 @@ export class CrearMembresiaComponent implements OnInit {
         });
       }
       //fin hu3 y 4
-      this.router.navigate(['membresias/lista']); //permite llevar a la ruta deseada después de presionar el botón
+      this.router.navigate(['components/membresias/lista']); //permite llevar a la ruta deseada después de presionar el botón
       this.form.reset;
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
