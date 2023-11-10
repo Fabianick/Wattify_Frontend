@@ -14,6 +14,7 @@ import { ListarDispositivosComponent } from './dispositivos/listar-dispositivos/
 import { MetodoPagoComponent } from './metodo-pago/metodo-pago.component';
 import { CrearMetodoPagoComponent } from './metodo-pago/crear-metodo-pago/crear-metodo-pago.component';
 import { ListarMetodoPagoComponent } from './metodo-pago/listar-metodo-pago/listar-metodo-pago.component';
+import { GuardService } from '../services/guard.service';
 
 
 const routes: Routes = [
@@ -30,13 +31,12 @@ const routes: Routes = [
       { path: 'nuevo', component: CrearMembresiaComponent }, //registrar
       { path: 'lista', component: ListarMembresiaComponent }, //listar
       { path: 'ediciones/:id', component: CrearMembresiaComponent }, //actualizar
-
-
     ],
   },
   {
     path: 'Tdispositivo',component: TdispositivoComponent,children: [
-      { path: 'nuevo', component: CreaeditaDispositivoComponent }, //registrar
+      { path: 'nuevo', component: CreaeditaDispositivoComponent,canActivate: [GuardService],
+      data: { 'requiredRole': 'ADMIN' } }, //registrar
       { path: 'lista', component: ListarDispositivoComponent }, //listar
       { path: 'ediciones/:id', component: CreaeditaDispositivoComponent }, //listar
     ],
