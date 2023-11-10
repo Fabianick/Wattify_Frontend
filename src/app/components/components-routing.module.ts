@@ -17,6 +17,8 @@ import { ListarMetodoPagoComponent } from './metodo-pago/listar-metodo-pago/list
 import { GuardService } from '../services/guard.service';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ComprobantePagoComponent } from './comprobante-pago/comprobante-pago.component';
+import { ListarComprobanteComponent } from './comprobante-pago/listar-comprobante/listar-comprobante.component';
 
 
 const routes: Routes = [
@@ -59,6 +61,11 @@ const routes: Routes = [
   },
   {
     path:'login',component: LoginComponent
+  },
+  {
+    path: 'comprobante-pago',component: ComprobantePagoComponent,children: [ //cambio de rutas
+      { path: 'lista', component: ListarComprobanteComponent}, //listar
+    ],
   }
 ];
 

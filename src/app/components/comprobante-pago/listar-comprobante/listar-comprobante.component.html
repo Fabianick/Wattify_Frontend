@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <br />
+    <h2 style="text-align: center">Lista de Comprobantes</h2>
+    <div style="text-align: right">
+      <button
+        mat-raised-button
+        color="primary"
+        routerLink="/comprobantes/listar"
+      >
+        Nuevo
+      </button>
+    </div>
+    <table mat-table [dataSource]="datasource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Codigo">
+        <th mat-header-cell *matHeaderCellDef>Codigo</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.id }}
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Fecha Emision">
+        <th mat-header-cell *matHeaderCellDef>Fecha Emision</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.fechaEmision }}
+        </td>
+      </ng-container>
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Metodo de Pago">
+        <th mat-header-cell *matHeaderCellDef>Metodo de Pago</th>
+        <td mat-cell *matCellDef="let element">{{ element.MetodoPago.tipo_de_pago }}</td>
+      </ng-container>
+
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Costo Total">
+          <th mat-header-cell *matHeaderCellDef>Costo Total</th>
+          <td mat-cell *matCellDef="let element">{{ element.costo_total }}</td>
+        </ng-container>
+
+
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="Usuario">
+        <th mat-header-cell *matHeaderCellDef>Usuario</th>
+        <td mat-cell *matCellDef="let element">{{ element.Users.username }}</td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      showFirstLastButtons
+    ></mat-paginator>
+  </div>
+</body>
+</html>

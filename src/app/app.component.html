@@ -36,7 +36,10 @@
   <button mat-menu-item routerLink="components/metodo-pago/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
-
+<mat-menu #menuComprobantePago="matMenu">
+  <button mat-menu-item routerLink="/comprobante-pago/lista">Listar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
 <mat-menu #menuSalir="matMenu">
   <button mat-menu-item routerLink="components/login" (click)="cerrar()">
     <mat-icon>logout</mat-icon>
