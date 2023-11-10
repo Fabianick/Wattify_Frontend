@@ -22,9 +22,9 @@ export class CrearMembresiaComponent implements OnInit {
   listaUsuario: Users[]=[];
   //hu3 y 4
   tipos: { value: string; viewValue: string }[] = [
-    { value: 'Tipo1', viewValue: 'Tipo1' },
-    { value: 'Tipo2', viewValue: 'Tipo2' },
-    { value: 'Tipo3', viewValue: 'Tipo3' },
+    { value: 'Mensual', viewValue: 'Mensual' },
+    { value: 'Semestral', viewValue: 'Semestral' },
+    { value: 'Anual', viewValue: 'Anual' },
   ];
   constructor(
     private mS: MembresiaService,
@@ -40,18 +40,52 @@ export class CrearMembresiaComponent implements OnInit {
       this.init();
       });
 
+    // Crear una instancia de Moment con la fecha actual
+    const fechaActual = moment().format('YYYY-MM-DD');
+      
     //hu3 y hu4
     this.form = this.formBuilder.group({
       id_Membresia: [''],
       tipoMembresia: ['', Validators.required],
-      fechaInicio: ['', Validators.required],
-      fechaFin: ['', [Validators.required]],
-      precio: ['',[Validators.required]],
+      fechaInicio: [fechaActual],
+      fechaFin: [''],
+      precio: [''],
       user: ['',[Validators.required]],
     });
 
+    //precio con tipo
+    this.form.get('tipoMembresia')?.valueChanges.subscribe((tipoSeleccionado) => {
+      this.actualizarPrecio(tipoSeleccionado);
+
+      const fechaInicio = this.form.get('fechaInicio')?.value;
+      const fechaExpiracion = this.calcularFechaExpiracion(tipoSeleccionado, fechaInicio);
+      this.form.get('fechaFin')?.setValue(fechaExpiracion);
+    });
     
+
   }
+
+  actualizarPrecio(tipoSeleccionado: string) {
+    let precio: number = 0.0;
+  
+    switch (tipoSeleccionado) {
+      case 'Mensual':
+        precio = 9.90;
+        break;
+      case 'Semestral':
+        precio = 29.90;
+        break;
+      case 'Anual':
+        precio = 49.90;
+        break;
+      default:
+        // Puedes manejar un valor predeterminado o mostrar un mensaje de error.
+        break;
+    }
+  
+    this.form.get('precio')?.setValue(precio);
+  }
+
   aceptar(): void {
     if (this.form.valid) {
       this.membresia.id_Membresia = this.form.value.id_Membresia;
@@ -77,7 +111,7 @@ export class CrearMembresiaComponent implements OnInit {
         });
       }
       //fin hu3 y 4
-      this.router.navigate(['components/membresias/lista']); //permite llevar a la ruta deseada después de presionar el botón
+      this.router.navigate(['/components/membresias/lista']); //permite llevar a la ruta deseada después de presionar el botón
       this.form.reset;
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
@@ -104,6 +138,26 @@ export class CrearMembresiaComponent implements OnInit {
       });
     }
   }
+
+  calcularFechaExpiracion(tipoSeleccionado: string, fechaInicio: string): string {
+    const fechaInicioMoment = moment(fechaInicio, 'YYYY-MM-DD');
+    let fechaExpiracionMoment: moment.Moment;
+
+    switch (tipoSeleccionado) {
+      case 'Mensual':
+        fechaExpiracionMoment = fechaInicioMoment.clone().add(1, 'months');
+        break;
+      case 'Semestral':
+        fechaExpiracionMoment = fechaInicioMoment.clone().add(6, 'months');
+        break;
+      case 'Anual':
+        fechaExpiracionMoment = fechaInicioMoment.clone().add(1, 'years');
+        break;
+      default:
+        fechaExpiracionMoment = fechaInicioMoment;
+        break;
+    }
+
+    return fechaExpiracionMoment.format('YYYY-MM-DD');
+  }
 }
-
-

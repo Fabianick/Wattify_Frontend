@@ -31,8 +31,6 @@ const routes: Routes = [
       { path: 'nuevo', component: CrearMembresiaComponent }, //registrar
       { path: 'lista', component: ListarMembresiaComponent }, //listar
       { path: 'ediciones/:id', component: CrearMembresiaComponent }, //actualizar
-
-
     ],
   },
   {

@@ -11,7 +11,6 @@ const base_url = environment.base;
 export class DispositivoService {
   private url = `${base_url}/dispositivo`;
   private listacambio = new Subject<Dispositivo[]>();
-
   constructor(private http: HttpClient) {}
 
   list() {
