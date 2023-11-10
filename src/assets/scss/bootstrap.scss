@@ -1,0 +1,63 @@
+/******* Customized Bootstrap ********/
+
+$primary: #FF9933;
+$secondary: #FF9933;
+$light: #F6FFF2;
+$dark: #263A4F;
+
+$font-family-sans-serif: 'Open Sans', sans-serif;
+
+$headings-font-family: 'Roboto', sans-serif;
+
+$body-color: #8D9AA8;
+
+$headings-color: $dark;
+
+$headings-font-weight: 700;
+
+$display-font-weight: 700;
+
+$enable-responsive-font-sizes: true;
+
+$border-radius: false;
+
+$link-decoration: none;
+
+$enable-negative-margins: true;
+
+.shadow {
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.profile-tab-nav{
+	min-width:250px;
+}
+.tab-content{
+	flex:1;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.nav-pills{
+	a.nav-link{
+		padding:15px 20px;
+		border-bottom:1px solid #ddd;
+		border-radius:0;
+		color:#333;
+		i{
+			width:20px;
+		}
+	}
+}
+
+.img-circle {
+	img {
+		height: 100px;
+		width: 100px;
+		border-radius: 100%;
+		border: 5px solid #fff;
+	}
+}
+
+@import "bootstrap/scss/bootstrap";
