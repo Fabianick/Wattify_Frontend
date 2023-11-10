@@ -27,6 +27,7 @@ import { CreaeditaDispositivosComponent } from './dispositivos/creaedita-disposi
 import { MetodoPagoComponent } from './metodo-pago/metodo-pago.component';
 import { CrearMetodoPagoComponent } from './metodo-pago/crear-metodo-pago/crear-metodo-pago.component';
 import { ListarMetodoPagoComponent } from './metodo-pago/listar-metodo-pago/listar-metodo-pago.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ListarMetodoPagoComponent } from './metodo-pago/listar-metodo-pago/list
     MetodoPagoComponent,
     CrearMetodoPagoComponent,
     ListarMetodoPagoComponent,
+    HomeComponent,
   ],
   imports: [
     CommonModule,
