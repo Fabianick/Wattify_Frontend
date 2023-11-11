@@ -39,6 +39,8 @@ export class CrearMembresiaComponent implements OnInit {
       this.edicion = data['id'] != null;
       this.init();
       });
+      
+    const fechaActual = moment().format('YYYY-MM-DD');
 
     //hu3 y hu4
     this.form = this.formBuilder.group({

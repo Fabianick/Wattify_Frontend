@@ -30,7 +30,7 @@ export class CrearMetodoPagoComponent implements OnInit {
       this.init();
     });
 
-      
+
     //hu3 y hu4
     this.form = this.formBuilder.group({
       id_MetodoPago: [''],
@@ -59,7 +59,7 @@ export class CrearMetodoPagoComponent implements OnInit {
         });
       }
       //fin hu3 y 4
-      this.router.navigate(['metodo-pago/lista']); //permite llevar a la ruta deseada después de presionar el botón
+      this.router.navigate(['components/metodo-pago/lista']); //permite llevar a la ruta deseada después de presionar el botón
       this.form.reset;
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
@@ -79,7 +79,7 @@ export class CrearMetodoPagoComponent implements OnInit {
           id_MetodoPago: new FormControl(data.id_MetodoPago),
           tipo_de_pago: new FormControl(data.tipo_de_pago),
           titular: new FormControl(data.titular),
-          
+
         });
       });
     }
