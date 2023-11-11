@@ -73,7 +73,7 @@ export class CreaeditaDispositivosComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['dispositivos']);
+      this.router.navigate(['components/dispositivos']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
