@@ -1,56 +1,68 @@
-<mat-toolbar *ngIf="verificar()">
-  <mat-icon>menu</mat-icon>
-  <button mat-button [matMenuTriggerFor]="menuUsuarios" *ngIf="validarRol()">Usuarios</button>
-  <button mat-button [matMenuTriggerFor]="menuMembresias">Membresias</button>
-  <button mat-button [matMenuTriggerFor]="menuTDispositivo" *ngIf="validarRol()">Tipo Dispositivo</button>
-  <button mat-button [matMenuTriggerFor]="menuDispositivo" *ngIf="validarRol()">Dispositivos</button>
-  <button mat-button [matMenuTriggerFor]="menuMetoPago">Metodo Pago</button>
-  <button mat-button [matMenuTriggerFor]="menuComprobantePago">Comprobante Pago</button>
-  <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
-</mat-toolbar>
+<mat-sidenav-container style="height: 100%;">
+  <mat-sidenav mode="side" opened *ngIf="verificar()">
 
-<mat-menu #menuUsuarios="matMenu">
-  <button mat-menu-item routerLink="components/usuarios/nuevo"  *ngIf="role == 'USER'">Registrar</button>
-  <button mat-menu-item routerLink="components/usuarios">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
 
-<mat-menu #menuMembresias="matMenu">
-  <button mat-menu-item routerLink="components/membresias/nuevo" *ngIf="role == 'ADMIN'">Registrar</button>
-  <button mat-menu-item routerLink="components/membresias/lista">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
+    <!-- Contenido de tu barra lateral aquí -->
+    <mat-toolbar >
+      <mat-icon>menu</mat-icon>
+    </mat-toolbar>
+      <div class="sidebar-content">
+      <button mat-button [matMenuTriggerFor]="menuUsuarios" *ngIf="role == 'ADMIN'" >Usuarios</button>
+      <button mat-button [matMenuTriggerFor]="menuMembresias" *ngIf="validarRol()">Membresias</button>
+      <button mat-button [matMenuTriggerFor]="menuTDispositivo" *ngIf="validarRol()">Tipo Dispositivo</button>
+      <button mat-button [matMenuTriggerFor]="menuDispositivo" *ngIf="validarRol()">Dispositivos</button>
+      <button mat-button [matMenuTriggerFor]="menuMetoPago" *ngIf="validarRol()">Metodo Pago</button>
+      <button mat-button [matMenuTriggerFor]="menuComprobantePago" *ngIf="validarRol()">Comprobante Pago</button>
+      <button mat-button [matMenuTriggerFor]="menuSalir" *ngIf="validarRol()">Usuario</button>
+    </div>
 
-<mat-menu #menuTDispositivo="matMenu">
-  <button mat-menu-item routerLink="components/Tdispositivo/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
-  <button mat-menu-item routerLink="components/Tdispositivo/lista">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
+  </mat-sidenav>
 
-<mat-menu #menuDispositivo="matMenu">
-  <button mat-menu-item routerLink="components/dispositivos/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
-  <button mat-menu-item routerLink="components/dispositivos/lista">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
-<mat-menu #menuMetoPago="matMenu">
-  <button mat-menu-item routerLink="components/metodo-pago/nuevo"*ngIf="role == 'USER'">Registrar</button>
-  <button mat-menu-item routerLink="components/metodo-pago/lista">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
-<mat-menu #menuComprobantePago="matMenu">
-  <button mat-menu-item routerLink="components/comprobante-pago/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
-  <button mat-menu-item routerLink="components/comprobante-pago/lista">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
-<mat-menu #menuSalir="matMenu">
-  <button mat-menu-item routerLink="components/login" (click)="cerrar()">
-    <mat-icon>logout</mat-icon>
-    <span>Cerrar sesión</span>
 
-  </button>
-  <button mat-menu-item >Rol:
-    <span>{{role}}</span>
-  </button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
-<router-outlet></router-outlet>
+      <mat-menu #menuUsuarios="matMenu">
+        <button mat-menu-item routerLink="components/usuarios/nuevo" >Registrar</button>
+        <button mat-menu-item routerLink="components/usuarios">Listar</button>
+        <!-- Agrega más elementos de menú si es necesario -->
+      </mat-menu>
+
+      <mat-menu #menuMembresias="matMenu">
+        <button mat-menu-item routerLink="components/membresias/nuevo" *ngIf="role == 'ADMIN'">Registrar</button>
+        <button mat-menu-item routerLink="components/membresias/lista">Listar</button>
+        <!-- Agrega más elementos de menú si es necesario -->
+      </mat-menu>
+
+      <mat-menu #menuTDispositivo="matMenu">
+        <button mat-menu-item routerLink="components/Tdispositivo/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
+        <button mat-menu-item routerLink="components/Tdispositivo/lista">Listar</button>
+        <!-- Agrega más elementos de menú si es necesario -->
+      </mat-menu>
+
+      <mat-menu #menuDispositivo="matMenu">
+        <button mat-menu-item routerLink="components/dispositivos/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
+        <button mat-menu-item routerLink="components/dispositivos/lista">Listar</button>
+        <!-- Agrega más elementos de menú si es necesario -->
+      </mat-menu>
+      <mat-menu #menuMetoPago="matMenu">
+        <button mat-menu-item routerLink="components/metodo-pago/nuevo"*ngIf="role == 'USER'">Registrar</button>
+        <button mat-menu-item routerLink="components/metodo-pago/lista">Listar</button>
+        <!-- Agrega más elementos de menú si es necesario -->
+      </mat-menu>
+      <mat-menu #menuComprobantePago="matMenu">
+        <button mat-menu-item routerLink="components/comprobante-pago/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
+        <button mat-menu-item routerLink="components/comprobante-pago/lista">Listar</button>
+        <!-- Agrega más elementos de menú si es necesario -->
+      </mat-menu>
+      <mat-menu #menuSalir="matMenu">
+        <button mat-menu-item routerLink="components/login" (click)="cerrar()">
+          <mat-icon>logout</mat-icon>
+          <span>Cerrar sesión</span>
+
+        </button>
+        <button mat-menu-item >Rol:
+          <span>{{role}}</span>
+        </button>
+        <!-- Agrega más elementos de menú si es necesario -->
+      </mat-menu>
+      <router-outlet></router-outlet>
+</mat-sidenav-container>
+

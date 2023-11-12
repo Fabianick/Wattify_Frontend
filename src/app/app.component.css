@@ -1,4 +1,19 @@
 .mat-toolbar {
   background-color: rgb(4, 73, 4);
-  color: white;
+  color: rgb(255, 255, 255);
+}
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+
+}
+
+.sidebar-content button {
+  margin-bottom: 8px; /* Espaciado entre botones */
+  color: rgb(255, 255, 255);
+}
+
+.mat-sidenav{
+  background-color: rgb(4, 73, 4);
 }

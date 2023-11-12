@@ -28,11 +28,13 @@ const routes: Routes = [
     children:[
       { path: 'nuevo', component: CreaeditaUsersComponent },
       { path: 'ediciones/:id', component: CreaeditaUsersComponent },
-    ]
+    ],canActivate: [GuardService],
+    data: { 'requiredRole': 'ADMIN' }
   },
   {
     path: 'membresias',component: MembresiaComponent,children: [ //cambio de rutas
-      { path: 'nuevo', component: CrearMembresiaComponent }, //registrar
+      { path: 'nuevo', component: CrearMembresiaComponent ,canActivate: [GuardService],
+      data: { 'requiredRole': 'ADMIN' } }, //registrar
       { path: 'lista', component: ListarMembresiaComponent }, //listar
       { path: 'ediciones/:id', component: CrearMembresiaComponent }, //actualizar
     ],
