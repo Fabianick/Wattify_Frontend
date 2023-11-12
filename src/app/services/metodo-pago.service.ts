@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MetodoPago } from '../models/metodo-pago';
 
 const base_url = environment.base;
@@ -15,10 +15,20 @@ export class MetodoPagoService {
   constructor(private http: HttpClient) {}
 
   list() {
-    return this.http.get<MetodoPago[]>(this.url);
+    let token = sessionStorage.getItem('token');
+    return this.http.get<MetodoPago[]>(this.url,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   insert(uni: MetodoPago) {
-    return this.http.post(this.url, uni);
+    let token = sessionStorage.getItem('token');
+    return this.http.post(this.url, uni, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   setList(listaNueva: MetodoPago[]) {
     this.listaCambio.next(listaNueva);
@@ -28,13 +38,28 @@ export class MetodoPagoService {
   }
 
   listId(id: number) {
-    return this.http.get<MetodoPago>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+    return this.http.get<MetodoPago>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Content-Type', 'application/json'),
+    });
   }
   update(u: MetodoPago) {
-    return this.http.put(this.url, u);
+    let token = sessionStorage.getItem('token');
+    return this.http.put(this.url, u,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+    return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 
 }
