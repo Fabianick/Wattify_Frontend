@@ -15,8 +15,10 @@ import { MetodoPagoComponent } from './metodo-pago/metodo-pago.component';
 import { CrearMetodoPagoComponent } from './metodo-pago/crear-metodo-pago/crear-metodo-pago.component';
 import { ListarMetodoPagoComponent } from './metodo-pago/listar-metodo-pago/listar-metodo-pago.component';
 import { GuardService } from '../services/guard.service';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ComprobantePagoComponent } from './comprobante-pago/comprobante-pago.component';
+import { ListarComprobantesComponent } from './comprobante-pago/listar-comprobantes/listar-comprobantes.component';
+import { CreaeditaComprobantesComponent } from './comprobante-pago/creaedita-comprobantes/creaedita-comprobantes.component';
 
 
 const routes: Routes = [
@@ -55,6 +57,13 @@ const routes: Routes = [
       { path: 'nuevo', component: CrearMetodoPagoComponent }, //registrar
       { path: 'lista', component: ListarMetodoPagoComponent}, //listar
       { path: 'ediciones/:id', component: CrearMetodoPagoComponent }, //actualizar
+    ],
+  },
+  {
+    path: 'comprobante-pago',component: ComprobantePagoComponent,children: [ //cambio de rutas
+      { path: 'nuevo', component: CreaeditaComprobantesComponent }, //registrar
+      { path: 'lista', component: ListarComprobantesComponent}, //listar
+      { path: 'ediciones/:id', component: CreaeditaComprobantesComponent }, //actualizar
     ],
   },
   {

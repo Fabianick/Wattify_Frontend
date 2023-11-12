@@ -5,6 +5,7 @@
   <button mat-button [matMenuTriggerFor]="menuTDispositivo" *ngIf="validarRol()">Tipo Dispositivo</button>
   <button mat-button [matMenuTriggerFor]="menuDispositivo" *ngIf="validarRol()">Dispositivos</button>
   <button mat-button [matMenuTriggerFor]="menuMetoPago">Metodo Pago</button>
+  <button mat-button [matMenuTriggerFor]="menuComprobantePago">Comprobante Pago</button>
   <button mat-button [matMenuTriggerFor]="menuSalir">Usuario</button>
 </mat-toolbar>
 
@@ -36,7 +37,11 @@
   <button mat-menu-item routerLink="components/metodo-pago/lista">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
-
+<mat-menu #menuComprobantePago="matMenu">
+  <button mat-menu-item routerLink="components/comprobante-pago/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
+  <button mat-menu-item routerLink="components/comprobante-pago/lista">Listar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
 <mat-menu #menuSalir="matMenu">
   <button mat-menu-item routerLink="components/login" (click)="cerrar()">
     <mat-icon>logout</mat-icon>

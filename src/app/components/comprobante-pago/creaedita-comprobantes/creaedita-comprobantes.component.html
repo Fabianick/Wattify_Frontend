@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de comprobantes de pago</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>id comprobante</mat-label>
+          <input matInput placeholder="Id" formControlName="id" />
+        </mat-form-field>
+        <br />
+
+
+        <!--fecha-->
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-hint>Emision de Comprobante</mat-hint>
+          <input matInput formControlName="fechaEmision" />
+      </mat-form-field>
+      <br />
+
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Metodo de Pago</mat-label>
+          <mat-select formControlName="metodo_de_pago">
+          <mat-option *ngFor="let mp of listametodopago" [value]="mp.tipo_de_pago">
+          {{ mp.id_MetodoPago }}
+          </mat-option>
+          </mat-select>
+          <mat-error
+          *ngIf="obtenerControlCampo('metodo_de_pago')?.errors?.['required']"
+          >
+          El metodo de pago es obligatorio.
+          </mat-error>
+          </mat-form-field>
+          <br />
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Costo Total</mat-label>
+          <input
+            matInput
+            placeholder="costo_total"
+            formControlName="costo_total"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('costo_total')?.errors?.['required']"
+          >
+            El costo total es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Usuario</mat-label>
+          <mat-select formControlName="user">
+          <mat-option *ngFor="let us of listausers" [value]="us.nombres">
+          {{ us.nombres }}
+          </mat-option>
+          </mat-select>
+          <mat-error
+          *ngIf="obtenerControlCampo('user')?.errors?.['required']"
+          >
+          El usuario es obligatorio.
+          </mat-error>
+          </mat-form-field>
+          <br />
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/components/comprobante-pago">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>

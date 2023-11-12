@@ -94,8 +94,7 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error
-            *ngIf="obtenerControlCampo('fecha')?.errors?.['require
-        d']"
+            *ngIf="obtenerControlCampo('fecha')?.errors?.['required']"
           >
             La fecha de creación es obligatoria.
           </mat-error>

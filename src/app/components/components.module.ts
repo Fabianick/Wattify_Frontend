@@ -28,6 +28,9 @@ import { MetodoPagoComponent } from './metodo-pago/metodo-pago.component';
 import { CrearMetodoPagoComponent } from './metodo-pago/crear-metodo-pago/crear-metodo-pago.component';
 import { ListarMetodoPagoComponent } from './metodo-pago/listar-metodo-pago/listar-metodo-pago.component';
 import { HomeComponent } from './home/home.component';
+import { ComprobantePagoComponent } from './comprobante-pago/comprobante-pago.component';
+import { ListarComprobantesComponent } from './comprobante-pago/listar-comprobantes/listar-comprobantes.component';
+import { CreaeditaComprobantesComponent } from './comprobante-pago/creaedita-comprobantes/creaedita-comprobantes.component';
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { HomeComponent } from './home/home.component';
     CrearMetodoPagoComponent,
     ListarMetodoPagoComponent,
     HomeComponent,
+    ComprobantePagoComponent,
+    ListarComprobantesComponent,
+    CreaeditaComprobantesComponent,
   ],
   imports: [
     CommonModule,
