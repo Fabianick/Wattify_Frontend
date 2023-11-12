@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de detalles de pago</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>id detalle</mat-label>
+          <input matInput placeholder="Id" formControlName="id" />
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Cantidad Dispositivos</mat-label>
+          <input
+            matInput
+            placeholder="Cantidad_dispositivo"
+            formControlName="Cantidad_dispositivo"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('Cantidad_dispositivo')?.errors?.['required']"
+          >
+            La cantidad de dispositivos es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Consumo Dispositivos</mat-label>
+          <input
+            matInput
+            placeholder="Consumo_dispositivo"
+            formControlName="Consumo_dispositivo"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('Consumo_dispositivo')?.errors?.['required']"
+          >
+            El consumo de dispositivos es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Costo Dispositivos</mat-label>
+          <input
+            matInput
+            placeholder="Costo_dispositivo"
+            formControlName="Costo_dispositivo"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('Costo_dispositivo')?.errors?.['required']"
+          >
+            El consumo de dispositivos es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Sub total a pagar</mat-label>
+          <input
+            matInput
+            placeholder="Sub_total_pago"
+            formControlName="Sub_total_pago"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('Sub_total_pago')?.errors?.['required']"
+          >
+            El consumo de dispositivos es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Comprobante de Pago</mat-label>
+          <mat-select formControlName="comprobante_pago">
+          <mat-option *ngFor="let dp of listacomprobante" [value]="dp.id">
+          {{ dp.id }}
+          </mat-option>
+          </mat-select>
+          <mat-error
+          *ngIf="obtenerControlCampo('comprobante_pago')?.errors?.['required']"
+          >
+          El comprobante de pago es obligatorio.
+          </mat-error>
+          </mat-form-field>
+          <br />
+        <br />
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Membresia</mat-label>
+          <mat-select formControlName="membresia">
+          <mat-option *ngFor="let mp of listamembresia" [value]="mp.tipoMembresia">
+          {{ mp.tipoMembresia }}
+          </mat-option>
+          </mat-select>
+          <mat-error
+          *ngIf="obtenerControlCampo('membresia')?.errors?.['required']"
+          >
+          La membresia es obligatoria.
+          </mat-error>
+          </mat-form-field>
+          <br />
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/components/comprobante-pago">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>

@@ -19,6 +19,9 @@ import { LoginComponent } from './login/login.component';
 import { ComprobantePagoComponent } from './comprobante-pago/comprobante-pago.component';
 import { ListarComprobantesComponent } from './comprobante-pago/listar-comprobantes/listar-comprobantes.component';
 import { CreaeditaComprobantesComponent } from './comprobante-pago/creaedita-comprobantes/creaedita-comprobantes.component';
+import { DetallePagoComponent } from './detalle-pago/detalle-pago.component';
+import { CreaeditaDetallesComponent } from './detalle-pago/creaedita-detalles/creaedita-detalles.component';
+import { ListarDetallesComponent } from './detalle-pago/listar-detalles/listar-detalles.component';
 
 
 const routes: Routes = [
@@ -66,6 +69,13 @@ const routes: Routes = [
       { path: 'nuevo', component: CreaeditaComprobantesComponent }, //registrar
       { path: 'lista', component: ListarComprobantesComponent}, //listar
       { path: 'ediciones/:id', component: CreaeditaComprobantesComponent }, //actualizar
+    ],
+  },
+  {
+    path: 'detalle-pago',component: DetallePagoComponent,children: [ //cambio de rutas
+      { path: 'nuevo', component: CreaeditaDetallesComponent }, //registrar
+      { path: 'lista', component: ListarDetallesComponent}, //listar
+      { path: 'ediciones/:id', component: CreaeditaDetallesComponent }, //actualizar
     ],
   },
   {

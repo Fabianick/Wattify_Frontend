@@ -1,3 +1,4 @@
+import { CreaeditaDetallesComponent } from './detalle-pago/creaedita-detalles/creaedita-detalles.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -31,6 +32,8 @@ import { HomeComponent } from './home/home.component';
 import { ComprobantePagoComponent } from './comprobante-pago/comprobante-pago.component';
 import { ListarComprobantesComponent } from './comprobante-pago/listar-comprobantes/listar-comprobantes.component';
 import { CreaeditaComprobantesComponent } from './comprobante-pago/creaedita-comprobantes/creaedita-comprobantes.component';
+import { ListarDetallesComponent } from './detalle-pago/listar-detalles/listar-detalles.component';
+import { DetallePagoComponent } from './detalle-pago/detalle-pago.component';
 
 
 @NgModule({
@@ -54,6 +57,10 @@ import { CreaeditaComprobantesComponent } from './comprobante-pago/creaedita-com
     ComprobantePagoComponent,
     ListarComprobantesComponent,
     CreaeditaComprobantesComponent,
+    CreaeditaDetallesComponent,
+    ListarDetallesComponent,
+    DetallePagoComponent,
+
   ],
   imports: [
     CommonModule,
