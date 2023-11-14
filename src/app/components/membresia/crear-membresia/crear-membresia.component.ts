@@ -5,6 +5,7 @@ import { Membresia } from 'src/app/models/membresia';
 import { MembresiaService } from 'src/app/services/membresia.service';
 import * as moment from 'moment';
 import { Users } from 'src/app/models/users';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-crear-membresia',
@@ -28,6 +29,7 @@ export class CrearMembresiaComponent implements OnInit {
   ];
   constructor(
     private mS: MembresiaService,
+    private uS: UsersService,
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute
@@ -42,6 +44,7 @@ export class CrearMembresiaComponent implements OnInit {
       
     const fechaActual = moment().format('YYYY-MM-DD');
 
+    
     //hu3 y hu4
     this.form = this.formBuilder.group({
       id_Membresia: [''],
@@ -49,8 +52,12 @@ export class CrearMembresiaComponent implements OnInit {
       fechaInicio: [fechaActual],
       fechaFin: [''],
       precio: [''],
-      user: ['',[Validators.required]],
+      user: ['',Validators.required],
     });
+
+    this.uS.list().subscribe((data) => {
+      this.listaUsuario= data;
+    })
 
     //precio con tipo
     this.form.get('tipoMembresia')?.valueChanges.subscribe((tipoSeleccionado) => {
@@ -61,6 +68,7 @@ export class CrearMembresiaComponent implements OnInit {
       this.form.get('fechaFin')?.setValue(fechaExpiracion);
     });
 
+   
 
   }
 
@@ -110,8 +118,7 @@ export class CrearMembresiaComponent implements OnInit {
         });
       }
       //fin hu3 y 4
-      this.router.navigate(['components/membresias/lista']); //permite llevar a la ruta deseada después de presionar el botón
-      this.form.reset;
+      this.router.navigate(['components/membresias']); //permite llevar a la ruta deseada después de presionar el botón
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

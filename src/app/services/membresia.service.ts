@@ -10,7 +10,7 @@ const base_url = environment.base;
   providedIn: 'root'
 })
 export class MembresiaService {
-  private url = `${base_url}/membresias`;  //misma ruta del backend
+  private url = `${base_url}/membresia`;  //misma ruta del backend
   private listaCambio = new Subject<Membresia[]>();
   constructor(private http: HttpClient) {}
   list() {

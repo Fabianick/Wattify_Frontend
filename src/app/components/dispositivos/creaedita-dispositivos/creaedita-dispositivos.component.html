@@ -1,128 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div class="container" style="text-align: center">
-      <h2>Registro de Dispositvos</h2>
-      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
-        <mat-form-field class="example-full-width" *ngIf="edicion">
-          <mat-label>idDispositivo</mat-label>
-          <input matInput placeholder="Id" formControlName="idDispositivo" />
-        </mat-form-field>
-        <br />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container" style="text-align: center">
+    <h2>Registro de Dispositvos</h2>
+    <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+        <mat-label>idDispositivo</mat-label>
+        <input matInput placeholder="Id" formControlName="idDispositivo" />
+      </mat-form-field>
+      <br />
 
 
-        <mat-form-field class="example-full-width">
-          <mat-label>Dispositivo</mat-label>
-          <input
-            matInput
-            placeholder="nombre dispositivo"
-            formControlName="nombre"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('nombre')?.errors?.['required']"
-          >
-            El nombre del dispositivo es obligatorio.
-          </mat-error>
-        </mat-form-field>
-        <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>Dispositivo</mat-label>
+        <input matInput placeholder="nombre dispositivo" formControlName="nombre" />
+        <mat-error *ngIf="obtenerControlCampo('nombre')?.errors?.['required']">
+          El nombre del dispositivo es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
 
 
-        <mat-form-field class="example-full-width">
-          <mat-label>descripcion</mat-label>
-          <input
-            matInput
-            placeholder="descripcion"
-            formControlName="descripcion"
-          />
-          <mat-error
-            *ngIf="obtenerControlCampo('descripcion')?.errors?.['required']"
-          >
-            La descripcion es obligatoria .
-          </mat-error>
-        </mat-form-field>
-        <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>descripcion</mat-label>
+        <input matInput placeholder="descripcion" formControlName="descripcion" />
+        <mat-error *ngIf="obtenerControlCampo('descripcion')?.errors?.['required']">
+          La descripcion es obligatoria .
+        </mat-error>
+      </mat-form-field>
+      <br />
 
-        <mat-form-field class="example-full-width">
-            <mat-label>consumoHora</mat-label>
-            <input
-              matInput
-              placeholder="consumoHora"
-              formControlName="consumoHora"
-            />
-            <mat-error
-              *ngIf="obtenerControlCampo('consumoHora')?.errors?.['required']"
-            >
-              El consumo de hora es obligatoria .
-            </mat-error>
-          </mat-form-field>
-          <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>consumoHora</mat-label>
+        <input matInput placeholder="consumoHora" formControlName="consumoHora" />
+        <mat-error *ngIf="obtenerControlCampo('consumoHora')?.errors?.['required']">
+          El consumo de hora es obligatoria .
+        </mat-error>
+      </mat-form-field>
+      <br />
 
 
-          <mat-form-field class="example-full-width">
-            <mat-label>horasEncendidas</mat-label>
-            <input
-              matInput
-              placeholder="horasEncendidas"
-              formControlName="horasEncendidas"
-            />
-            <mat-error
-              *ngIf="obtenerControlCampo('horasEncendidas')?.errors?.['required']"
-            >
-              El tiempo de horas encendidas es obligatorio .
-            </mat-error>
-          </mat-form-field>
-          <br />
+      <mat-form-field class="example-full-width">
+        <mat-label>horasEncendidas</mat-label>
+        <input matInput placeholder="horasEncendidas" formControlName="horasEncendidas" />
+        <mat-error *ngIf="obtenerControlCampo('horasEncendidas')?.errors?.['required']">
+          El tiempo de horas encendidas es obligatorio .
+        </mat-error>
+      </mat-form-field>
+      <br />
 
 
-        <mat-form-field appearance="fill" class="example-full-width">
-          <input
-            matInput
-            placeholder="Ingrese fecha"
-            [matDatepicker]="picker"
-            formControlName="fecha"
-            [max]="maxFecha"
-          />
-          <mat-hint>MM/DD/YYYY</mat-hint>
-          <mat-datepicker-toggle
-            matIconSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          <mat-error
-            *ngIf="obtenerControlCampo('fecha')?.errors?.['required']"
-          >
-            La fecha de creación es obligatoria.
-          </mat-error>
-        </mat-form-field>
-        <br>
-        <br>
+      <mat-form-field appearance="fill" class="example-full-width">
+        <input matInput placeholder="Ingrese fecha" [matDatepicker]="picker" formControlName="fecha" [max]="maxFecha" />
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="obtenerControlCampo('fecha')?.errors?.['required']">
+          La fecha de creación es obligatoria.
+        </mat-error>
+      </mat-form-field>
+      <br>
+      <br>
 
-          <mat-form-field class="example-full-width">
-            <mat-label>Tipo</mat-label>
-            <mat-select formControlName="tipoDispositivo">
-            <mat-option *ngFor="let td of listaTiposDispositivos" [value]="td.idTipoDispositivo">
+      <mat-form-field class="example-full-width">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipoDispositivo">
+          <mat-option *ngFor="let td of listaTiposDispositivos" [value]="td.idTipoDispositivo">
             {{ td.nombreTipoDispositivo }}
-            </mat-option>
-            </mat-select>
-            <mat-error
-            *ngIf="obtenerControlCampo('tipoDispositivo')?.errors?.['required']"
-            >
-            El tipo de dispositivo es obligatorio.
-            </mat-error>
-            </mat-form-field>
-            <br />
-        <br />
-        <button mat-raised-button color="primary">Aceptar</button>
-        <button mat-raised-button color="warn" routerLink="/components/dispositivos">
-          Cancelar
-        </button>
-        <p>{{ mensaje }}</p>
-      </form>
-    </div>
-  </body>
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="obtenerControlCampo('tipoDispositivo')?.errors?.['required']">
+          El tipo de dispositivo es obligatorio.
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <br />
+      <button mat-raised-button color="primary">Aceptar</button>
+      <button mat-raised-button color="warn" routerLink="/components/dispositivos">
+        Cancelar
+      </button>
+      <p>{{ mensaje }}</p>
+    </form>
+  </div>
+</body>
+
 </html>

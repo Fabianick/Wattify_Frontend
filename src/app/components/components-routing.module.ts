@@ -4,7 +4,6 @@ import { UsersComponent } from './users/users.component';
 import { CreaeditaUsersComponent } from './users/creaedita-users/creaedita-users.component';
 import { MembresiaComponent } from './membresia/membresia.component';
 import { CrearMembresiaComponent } from './membresia/crear-membresia/crear-membresia.component';
-import { ListarMembresiaComponent } from './membresia/listar-membresia/listar-membresia.component';
 import { TdispositivoComponent } from './tdispositivo/tdispositivo.component';
 import { CreaeditaDispositivoComponent } from './tdispositivo/creaedita-dispositivo/creaedita-dispositivo.component';
 import { ListarDispositivoComponent } from './tdispositivo/listar-dispositivo/listar-dispositivo.component';
@@ -35,10 +34,12 @@ const routes: Routes = [
     data: { 'requiredRole': 'ADMIN' }
   },
   {
-    path: 'membresias',component: MembresiaComponent,children: [ //cambio de rutas
-      { path: 'nuevo', component: CrearMembresiaComponent ,canActivate: [GuardService],
-      data: { 'requiredRole': 'ADMIN' } }, //registrar
-      { path: 'lista', component: ListarMembresiaComponent }, //listar
+    path: 'membresias',
+    component: MembresiaComponent,
+    children: [ //cambio de rutas
+    { path: 'nuevo', component: CrearMembresiaComponent}, //registrar
+      //{ path: 'nuevo', component: CrearMembresiaComponent ,canActivate: [GuardService],
+      //data: { 'requiredRole': 'ADMIN' } }, //registrar
       { path: 'ediciones/:id', component: CrearMembresiaComponent }, //actualizar
     ],
   },
@@ -53,7 +54,7 @@ const routes: Routes = [
   {
     path: 'dispositivos',component: DispositivosComponent,children: [
       { path: 'nuevo', component: CreaeditaDispositivosComponent }, //registrar
-      { path: 'lista', component: ListarDispositivosComponent }, //listar
+      //{ path: 'lista', component: ListarDispositivosComponent }, //listar
       { path: 'ediciones/:id', component: CreaeditaDispositivosComponent }, //listar
     ],
   },

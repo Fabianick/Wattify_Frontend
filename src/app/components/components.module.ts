@@ -60,6 +60,7 @@ import { DetallePagoComponent } from './detalle-pago/detalle-pago.component';
     CreaeditaDetallesComponent,
     ListarDetallesComponent,
     DetallePagoComponent,
+    ListarComprobantesComponent
 
   ],
   imports: [
