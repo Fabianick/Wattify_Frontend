@@ -7,7 +7,7 @@ import { JwtRequest } from 'src/app/models/jwtRequest';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css','../../../assets/styles/login.css']
 })
 export class LoginComponent implements OnInit{
   constructor(private loginService: LoginService, private router: Router, private snackBar: MatSnackBar){}

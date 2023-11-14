@@ -31,7 +31,7 @@ function login() {
         title: "Successful login",
         timerProgressBar: true,
         confirmButtonColor: "#ffb703",
-        timer: 3000 
+        timer: 3000
       }).then( () => {
         window.location.href = 'index.html';
       });
