@@ -24,8 +24,7 @@ export class ComprobantePagoService {
 
   insert(compro: comprobantepago) {
     let token = sessionStorage.getItem('token');
-    return this.http.get<comprobantepago[]>(this.url,{
-
+    return this.http.post(this.url, compro,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),

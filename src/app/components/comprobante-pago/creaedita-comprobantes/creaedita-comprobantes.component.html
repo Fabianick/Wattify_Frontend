@@ -27,8 +27,8 @@
         <mat-form-field class="example-full-width">
           <mat-label>Metodo de Pago</mat-label>
           <mat-select formControlName="metodo_de_pago">
-          <mat-option *ngFor="let mp of listametodopago" [value]="mp.tipo_de_pago">
-          {{ mp.id_MetodoPago }}
+          <mat-option *ngFor="let mp of listametodopago" [value]="mp.id_MetodoPago">
+          {{ mp.tipo_de_pago }}
           </mat-option>
           </mat-select>
           <mat-error
@@ -44,7 +44,7 @@
           <mat-label>Costo Total</mat-label>
           <input
             matInput
-            placeholder="costo_total"
+            placeholder="Costo_total"
             formControlName="costo_total"
           />
           <mat-error
@@ -59,8 +59,8 @@
         <mat-form-field class="example-full-width">
           <mat-label>Usuario</mat-label>
           <mat-select formControlName="user">
-          <mat-option *ngFor="let us of listausers" [value]="us.nombres">
-          {{ us.nombres }}
+          <mat-option *ngFor="let us of listausers" [value]="us.id">
+          {{ us.username }}
           </mat-option>
           </mat-select>
           <mat-error

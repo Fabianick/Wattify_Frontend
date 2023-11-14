@@ -38,10 +38,10 @@ export class CreaeditaDetallesComponent {
     });
     this.form = this.formBuilder.group({
       id: [''],
-      Cantidad_dispositivo: ['', Validators.required],
-      Consumo_dispositivo: ['', Validators.required],
-      Costo_dispositivo: ['', [Validators.required]],
-      Sub_total_pago: ['', Validators.required],
+      cantidad_dispositivo: ['', Validators.required],
+      consumo_dispositivo: ['', Validators.required],
+      costo_dispositivo: ['', [Validators.required]],
+      sub_total_pago: ['', Validators.required],
       comprobante_pago: ['', Validators.required],
       membresia: ['', Validators.required],
     });
@@ -55,10 +55,10 @@ export class CreaeditaDetallesComponent {
   aceptar(): void {
     if (this.form.valid) {
       this.detalle.id = this.form.value.id;
-      this.detalle.Cantidad_dispositivo = this.form.value.Cantidad_dispositivo;
-      this.detalle.Consumo_dispositivo = this.form.value.Consumo_dispositivo;
-      this.detalle.Costo_dispositivo = this.form.value.Costo_dispositivo;
-      this.detalle.Sub_total_pago = this.form.value.Sub_total_pago;
+      this.detalle.cantidad_dispositivo = this.form.value.Cantidad_dispositivo;
+      this.detalle.consumo_dispositivo = this.form.value.Consumo_dispositivo;
+      this.detalle.costo_dispositivo = this.form.value.Costo_dispositivo;
+      this.detalle.sub_total_pago = this.form.value.Sub_total_pago;
       this.detalle.comprobante_pago = this.form.value.comprobante_pago;
       this.detalle.membresia = this.form.value.membresia;
 
@@ -93,10 +93,10 @@ export class CreaeditaDetallesComponent {
       this.dpS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           id: new FormControl(data.id),
-          Cantidad_dispositivo: new FormControl(data.Cantidad_dispositivo),
-          Consumo_dispositivo: new FormControl(data.Consumo_dispositivo),
-          Costo_dispositivo: new FormControl(data.Costo_dispositivo),
-          Sub_total_pago: new FormControl(data.Sub_total_pago),
+          Cantidad_dispositivo: new FormControl(data.cantidad_dispositivo),
+          Consumo_dispositivo: new FormControl(data.consumo_dispositivo),
+          Costo_dispositivo: new FormControl(data.costo_dispositivo),
+          Sub_total_pago: new FormControl(data.sub_total_pago),
           comprobante_pago: new FormControl(data.comprobante_pago),
           membresia: new FormControl(data.membresia),
         });

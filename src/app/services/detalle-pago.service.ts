@@ -25,8 +25,7 @@ export class DetallePagoService {
 
   insert(detalle: detallepago) {
     let token = sessionStorage.getItem('token');
-    return this.http.get<detallepago[]>(this.url,{
-
+    return this.http.post(this.url, detalle,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
