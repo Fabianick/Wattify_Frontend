@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import * as moment from 'moment';
-import { comprobantepago } from 'src/app/models/comprobante-pago';
+import { Comprobantepago } from 'src/app/models/comprobante-pago';
 import { MetodoPago } from 'src/app/models/metodo-pago';
 import { Users } from 'src/app/models/users';
 import { ComprobantePagoService } from 'src/app/services/comprobante-pago.service';
@@ -13,9 +13,9 @@ import { UsersService } from 'src/app/services/users.service';
   templateUrl: './creaedita-comprobantes.component.html',
   styleUrls: ['./creaedita-comprobantes.component.css']
 })
-export class CreaeditaComprobantesComponent {
+export class CreaeditaComprobantesComponent implements OnInit{
   form: FormGroup = new FormGroup({});
-  comprobante: comprobantepago = new comprobantepago();
+  comprobante: Comprobantepago = new Comprobantepago();
   listausers:Users[]=[];
   listametodopago: MetodoPago []=[];
   mensaje: string = '';
@@ -41,7 +41,7 @@ export class CreaeditaComprobantesComponent {
       id: [''],
       fechaEmision: [fechaActual],
       metodo_de_pago: ['', Validators.required],
-      costo_total: ['', [Validators.required]],
+      costo_total: ['', Validators.required],
       user: ['', Validators.required],
     });
     this.uS.list().subscribe((data) => {
@@ -55,11 +55,9 @@ export class CreaeditaComprobantesComponent {
     if (this.form.valid) {
       this.comprobante.id = this.form.value.id;
       this.comprobante.fechaEmision = this.form.value.fechaEmision;
-      this.comprobante.metodo_de_pago = this.form.value.metodo_de_pago;
+      this.comprobante.metodo_de_pago.id_MetodoPago = this.form.value.metodo_de_pago;
       this.comprobante.costo_total = this.form.value.costo_total;
-      this.comprobante.user = this.form.value.user;
-
-
+      this.comprobante.user.id = this.form.value.user;
       if (this.edicion) {
         this.cS.update(this.comprobante).subscribe(() => {
           this.cS.list().subscribe((data) => {
@@ -91,9 +89,9 @@ export class CreaeditaComprobantesComponent {
         this.form = new FormGroup({
           id: new FormControl(data.id),
           fechaEmision: new FormControl(data.fechaEmision),
-          metodo_de_pago: new FormControl(data.metodo_de_pago),
+          metodo_de_pago: new FormControl(data.metodo_de_pago.id_MetodoPago),
           costo_total: new FormControl(data.costo_total),
-          user: new FormControl(data.user),
+          user: new FormControl(data.user.id),
         });
       });
     }

@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { comprobantepago } from '../models/comprobante-pago';
+import { Comprobantepago } from '../models/comprobante-pago';
 const base_url = environment.base;
 
 @Injectable({
@@ -10,19 +10,19 @@ const base_url = environment.base;
 })
 export class ComprobantePagoService {
   private url = `${base_url}/comprobantepago`;
-  private listaCambio = new Subject<comprobantepago[]>();
+  private listaCambio = new Subject<Comprobantepago[]>();
   constructor(private http: HttpClient) { }
   list() {
     let token = sessionStorage.getItem('token');
 
-    return this.http.get<comprobantepago[]>(this.url,{
+    return this.http.get<Comprobantepago[]>(this.url,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
 
-  insert(compro: comprobantepago) {
+  insert(compro: Comprobantepago) {
     let token = sessionStorage.getItem('token');
     return this.http.post(this.url, compro,{
       headers: new HttpHeaders()
@@ -31,7 +31,7 @@ export class ComprobantePagoService {
     });
   }
 
-  setList(listaNueva: comprobantepago[]) {
+  setList(listaNueva: Comprobantepago[]) {
     this.listaCambio.next(listaNueva);
   }
 
@@ -41,14 +41,14 @@ export class ComprobantePagoService {
   listId(id: number) {
     let token = sessionStorage.getItem('token');
 
-    return this.http.get<comprobantepago>(`${this.url}/${id}`,{
+    return this.http.get<Comprobantepago>(`${this.url}/${id}`,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
 
-  update(compro: comprobantepago) {
+  update(compro: Comprobantepago) {
     let token = sessionStorage.getItem('token');
 
     return this.http.put(this.url, compro,{

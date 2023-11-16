@@ -28,7 +28,7 @@
 
       <mat-menu #menuMembresias="matMenu">
         <button mat-menu-item routerLink="components/membresias/nuevo" *ngIf="role == 'ADMIN'">Registrar</button>
-        <button mat-menu-item routerLink="components/membresias/lista">Listar</button>
+        <button mat-menu-item routerLink="components/membresias">Listar</button>
         <!-- Agrega más elementos de menú si es necesario -->
       </mat-menu>
 
@@ -55,7 +55,7 @@
       </mat-menu>
       <mat-menu #menuDetallePago="matMenu">
         <button mat-menu-item routerLink="components/detalle-pago/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
-        <button mat-menu-item routerLink="components/detalle-pago/lista">Listar</button>
+        <button mat-menu-item routerLink="components/detalle-pago">Listar</button>
         <!-- Agrega más elementos de menú si es necesario -->
       </mat-menu>
       <mat-menu #menuSalir="matMenu">

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { detallepago } from 'src/app/models/detalle-pago';
@@ -9,7 +9,7 @@ import { DetallePagoService } from 'src/app/services/detalle-pago.service';
   templateUrl: './listar-detalles.component.html',
   styleUrls: ['./listar-detalles.component.css']
 })
-export class ListarDetallesComponent {
+export class ListarDetallesComponent implements OnInit{
   datasource: MatTableDataSource<detallepago> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   displayedColumns: string[] = [

@@ -41,10 +41,10 @@ export class CrearMembresiaComponent implements OnInit {
       this.edicion = data['id'] != null;
       this.init();
       });
-      
+
     const fechaActual = moment().format('YYYY-MM-DD');
 
-    
+
     //hu3 y hu4
     this.form = this.formBuilder.group({
       id_Membresia: [''],
@@ -68,7 +68,7 @@ export class CrearMembresiaComponent implements OnInit {
       this.form.get('fechaFin')?.setValue(fechaExpiracion);
     });
 
-   
+
 
   }
 
@@ -139,7 +139,7 @@ export class CrearMembresiaComponent implements OnInit {
           fechaInicio: new FormControl(data.fechaInicio),
           fechaFin: new FormControl(data.fechaFin),
           precio: new FormControl(data.precio),
-          user: new FormControl(data.user)
+          user: new FormControl(data.user.id)
         });
       });
     }

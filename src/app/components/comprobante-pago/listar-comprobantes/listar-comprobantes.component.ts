@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { comprobantepago } from 'src/app/models/comprobante-pago';
+import { Comprobantepago } from 'src/app/models/comprobante-pago';
 import { ComprobantePagoService } from 'src/app/services/comprobante-pago.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { ComprobantePagoService } from 'src/app/services/comprobante-pago.servic
   styleUrls: ['./listar-comprobantes.component.css']
 })
 export class ListarComprobantesComponent implements OnInit{
-  datasource: MatTableDataSource<comprobantepago> = new MatTableDataSource();
+  datasource: MatTableDataSource<Comprobantepago> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   displayedColumns: string[] = [
     'Codigo',

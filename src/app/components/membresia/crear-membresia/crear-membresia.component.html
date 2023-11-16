@@ -9,7 +9,12 @@
     <div class="container" style="text-align: center">
         <h2>Registro de Membresias</h2>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
-           
+
+          <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>id</mat-label>
+            <input matInput placeholder="Id" formControlName="id_Membresia" />
+          </mat-form-field>
+          <br />
 
             <!--ID USUARIO-->
             <mat-form-field class="example-full-width">
@@ -21,10 +26,10 @@
                 </mat-select>
                 <mat-error *ngIf="obtenerControlCampo('user')?.errors?.['required']">
                     El Id del Usuario es obligatorio.
-                </mat-error>    
+                </mat-error>
             </mat-form-field>
 
-            
+
             <!--tipo-->
              <mat-form-field class="example-full-width">
                 <mat-label>Tipo</mat-label>
@@ -35,18 +40,18 @@
                 </mat-select>
                 <mat-error *ngIf="obtenerControlCampo('tipoMembresia')?.errors?.['required']">
                     El tipo es obligatorio.
-                </mat-error>    
+                </mat-error>
             </mat-form-field>
-            
+
             <br />
-            
+
              <!--precio-->
              <mat-form-field class="example-full-width">
                 <mat-label>Precio</mat-label>
                 <input matInput formControlName="precio" [readonly]="true" />
                 <mat-hint>Precio en Soles</mat-hint>
             </mat-form-field>
-            
+
             <br />
 
             <!--fecha-->
@@ -55,22 +60,22 @@
                 <mat-hint>Inicio de la Membresía</mat-hint>
             </mat-form-field>
             <br />
-            
+
             <!--fecha-->
             <mat-form-field appearance="fill" class="example-full-width">
                 <input matInput formControlName="fechaFin" />
                 <mat-hint>Fin de la Membresia</mat-hint>
             </mat-form-field>
             <br />
-            
-    
-            
-            
-            
+
+
+
+
+
             <!--BOTONES-->
             <div class="botones">
             <button mat-raised-button color="primary"> <!-- ALTERNATIVA ANGULAR MATERIAL BUTTON mat-raised-button -->
-                Aceptar</button> 
+                Aceptar</button>
             <button mat-raised-button color="warn" routerLink="/components/membresias">
                 Cancelar</button>
             </div>

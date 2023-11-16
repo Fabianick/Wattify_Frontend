@@ -70,7 +70,7 @@
           <mat-error
             *ngIf="obtenerControlCampo('sub_total_pago')?.errors?.['required']"
           >
-            El consumo de dispositivos es obligatorio.
+            El sub total a pagar es obligatorio.
           </mat-error>
         </mat-form-field>
         <br />
@@ -107,7 +107,7 @@
           <br />
         <br />
         <button mat-raised-button color="primary">Aceptar</button>
-        <button mat-raised-button color="warn" routerLink="/components/comprobante-pago">
+        <button mat-raised-button color="warn" routerLink="/components/detalle-pago">
           Cancelar
         </button>
         <p>{{ mensaje }}</p>

@@ -1,4 +1,4 @@
-import { comprobantepago } from "./comprobante-pago"
+import { Comprobantepago } from "./comprobante-pago"
 import { Membresia } from "./membresia"
 
 export class detallepago{
@@ -7,6 +7,6 @@ export class detallepago{
   consumo_dispositivo: number=0
   costo_dispositivo: number=0
   sub_total_pago: number=0
-  comprobante_pago: comprobantepago = new comprobantepago()
+  comprobante_pago: Comprobantepago = new Comprobantepago()
   membresia: Membresia = new Membresia()
 }

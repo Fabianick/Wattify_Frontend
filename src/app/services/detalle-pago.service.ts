@@ -10,7 +10,7 @@ const base_url = environment.base;
 })
 export class DetallePagoService {
 
-  private url = `${base_url}/comprobantepago`;
+  private url = `${base_url}/detallepago`;
   private listaCambio = new Subject<detallepago[]>();
   constructor(private http: HttpClient) { }
   list() {
