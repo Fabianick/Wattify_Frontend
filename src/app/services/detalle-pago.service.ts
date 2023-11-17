@@ -15,7 +15,6 @@ export class DetallePagoService {
   constructor(private http: HttpClient) { }
   list() {
     let token = sessionStorage.getItem('token');
-
     return this.http.get<detallepago[]>(this.url,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)

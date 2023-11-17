@@ -9,7 +9,6 @@ import { CreaeditaDispositivoComponent } from './tdispositivo/creaedita-disposit
 import { ListarDispositivoComponent } from './tdispositivo/listar-dispositivo/listar-dispositivo.component';
 import { DispositivosComponent } from './dispositivos/dispositivos.component';
 import { CreaeditaDispositivosComponent } from './dispositivos/creaedita-dispositivos/creaedita-dispositivos.component';
-import { ListarDispositivosComponent } from './dispositivos/listar-dispositivos/listar-dispositivos.component';
 import { MetodoPagoComponent } from './metodo-pago/metodo-pago.component';
 import { CrearMetodoPagoComponent } from './metodo-pago/crear-metodo-pago/crear-metodo-pago.component';
 import { ListarMetodoPagoComponent } from './metodo-pago/listar-metodo-pago/listar-metodo-pago.component';

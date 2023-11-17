@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import * as moment from 'moment';
 import { Comprobantepago } from 'src/app/models/comprobante-pago';
 import { detallepago } from 'src/app/models/detalle-pago';
 import { Membresia } from 'src/app/models/membresia';
@@ -13,14 +12,13 @@ import { MembresiaService } from 'src/app/services/membresia.service';
   templateUrl: './creaedita-detalles.component.html',
   styleUrls: ['./creaedita-detalles.component.css']
 })
-export class CreaeditaDetallesComponent implements OnInit {
+export class CreaeditaDetallesComponent implements OnInit{
   form: FormGroup = new FormGroup({});
   detalle: detallepago = new detallepago();
   listacomprobante:Comprobantepago[]=[];
   listamembresia: Membresia []=[];
   mensaje: string = '';
-  maxFecha: Date = moment().add(-1, 'days').toDate();
-  id: number = 0;
+  idd: number = 0;
   edicion: boolean = false;
   constructor(
     private dpS: DetallePagoService,
@@ -32,16 +30,16 @@ export class CreaeditaDetallesComponent implements OnInit {
   ) {}
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.id = data['id'];
+      this.idd = data['id'];
       this.edicion = data['id'] != null;
       this.init();
     });
     this.form = this.formBuilder.group({
       id: [''],
-      cantidad_dispositivo: [''],
-      consumo_dispositivo: [''],
-      costo_dispositivo: [''],
-      sub_total_pago: [''],
+      cantidad_dispositivo: ['', Validators.required],
+      consumo_dispositivo: ['', Validators.required],
+      costo_dispositivo: ['', Validators.required],
+      sub_total_pago: ['', Validators.required],
       comprobante_pago: ['', Validators.required],
       membresia: ['', Validators.required],
     });
@@ -90,14 +88,14 @@ export class CreaeditaDetallesComponent implements OnInit {
   }
   init() {
     if (this.edicion) {
-      this.dpS.listId(this.id).subscribe((data) => {
+      this.dpS.listId(this.idd).subscribe((data) => {
         this.form = new FormGroup({
           id: new FormControl(data.id),
           cantidad_dispositivo: new FormControl(data.cantidad_dispositivo),
           consumo_dispositivo: new FormControl(data.consumo_dispositivo),
           costo_dispositivo: new FormControl(data.costo_dispositivo),
           sub_total_pago: new FormControl(data.sub_total_pago),
-          comprobante_pago: new FormControl(data.comprobante_pago),
+          comprobante_pago: new FormControl(data.comprobante_pago.id),
           membresia: new FormControl(data.membresia.id_Membresia),
         });
       });
