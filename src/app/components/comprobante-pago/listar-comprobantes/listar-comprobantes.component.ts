@@ -5,7 +5,7 @@ import { Comprobantepago } from 'src/app/models/comprobante-pago';
 import { ComprobantePagoService } from 'src/app/services/comprobante-pago.service';
 
 @Component({
-  selector: 'app-listar-comprobante',
+  selector: 'app-listar-comprobantes',
   templateUrl: './listar-comprobantes.component.html',
   styleUrls: ['./listar-comprobantes.component.css']
 })
@@ -21,22 +21,22 @@ export class ListarComprobantesComponent implements OnInit{
     'accion01',
     'accion02',
   ];
-  constructor(private uS:ComprobantePagoService){}
+  constructor(private cS:ComprobantePagoService){}
   ngOnInit(): void {
-    this.uS.list().subscribe((data) => {
+    this.cS.list().subscribe((data) => {
       this.datasource = new MatTableDataSource(data);
       this.datasource.paginator = this.paginator;
     });
-    this.uS.getList().subscribe((data) => {
+    this.cS.getList().subscribe((data) => {
       this.datasource = new MatTableDataSource(data);
       this.datasource.paginator = this.paginator;
 
     });
   }
-  eliminar(id: number) {
-    this.uS.delete(id).subscribe((data) => {
-    this.uS.list().subscribe((data) => {
-    this.uS.setList(data);
+  eliminar(idc: number) {
+    this.cS.delete(idc).subscribe((data) => {
+    this.cS.list().subscribe((data) => {
+    this.cS.setList(data);
     });
     });
   }
