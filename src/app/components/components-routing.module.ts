@@ -20,6 +20,7 @@ import { CreaeditaComprobantesComponent } from './comprobante-pago/creaedita-com
 import { DetallePagoComponent } from './detalle-pago/detalle-pago.component';
 import { CreaeditaDetallesComponent } from './detalle-pago/creaedita-detalles/creaedita-detalles.component';
 import { ListarDetallesComponent } from './detalle-pago/listar-detalles/listar-detalles.component';
+import { ListarDispositivosComponent } from './dispositivos/listar-dispositivos/listar-dispositivos.component';
 
 
 const routes: Routes = [
@@ -53,7 +54,7 @@ const routes: Routes = [
   {
     path: 'dispositivos',component: DispositivosComponent,children: [
       { path: 'nuevo', component: CreaeditaDispositivosComponent }, //registrar
-      //{ path: 'lista', component: ListarDispositivosComponent }, //listar
+      { path: 'lista', component: ListarDispositivosComponent }, //listar
       { path: 'ediciones/:id', component: CreaeditaDispositivosComponent }, //listar
     ],
   },

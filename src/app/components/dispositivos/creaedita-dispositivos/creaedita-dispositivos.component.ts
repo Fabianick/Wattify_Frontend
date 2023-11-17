@@ -19,7 +19,7 @@ export class CreaeditaDispositivosComponent implements OnInit {
   maxFecha: Date = moment().add(-1, 'days').toDate();
   id: number = 0;
   edicion: boolean = false;
-  listaTiposDispositivos:TipoDispositivo[]=[]
+  listaTiposDispositivos:TipoDispositivo[]=[];
 
   constructor(
     private dS: DispositivoService,
@@ -45,7 +45,7 @@ export class CreaeditaDispositivosComponent implements OnInit {
       tipoDispositivo: ['', Validators.required],
     });
     this.tdS.list().subscribe((data) => {
-      this.listaTiposDispositivos = data;
+      this.listaTiposDispositivos= data;
     })
   }
   aceptar(): void {
@@ -57,7 +57,7 @@ export class CreaeditaDispositivosComponent implements OnInit {
         this.form.value.consumoHora;
       this.dispositivo.horasEncendidas = this.form.value.horasEncendidas;
       this.dispositivo.fecha = this.form.value.fecha;
-      this.dispositivo.tipoDispositivo = this.form.value.tipoDispositivo;
+      this.dispositivo.tipoDispositivo.idTipoDispositivo = this.form.value.tipoDispositivo;
 
 
       if (this.edicion) {
@@ -89,13 +89,13 @@ export class CreaeditaDispositivosComponent implements OnInit {
     if (this.edicion) {
       this.dS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
-          id_Dispositivo: new FormControl(data.idDispositivo),
+          idDispositivo: new FormControl(data.idDispositivo),
           nombre: new FormControl(data.nombre),
           descripcion: new FormControl(data.descripcion),
           consumoHora: new FormControl(data.consumoHora),
           horasEncendidas: new FormControl(data.horasEncendidas),
           fecha: new FormControl(data.fecha),
-          tipoDispositivo: new FormControl(data.tipoDispositivo),
+          tipoDispositivo: new FormControl(data.tipoDispositivo.idTipoDispositivo),
         });
       });
     }

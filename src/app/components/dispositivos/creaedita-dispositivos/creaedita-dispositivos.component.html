@@ -72,8 +72,8 @@
       <mat-form-field class="example-full-width">
         <mat-label>Tipo</mat-label>
         <mat-select formControlName="tipoDispositivo">
-          <mat-option *ngFor="let td of listaTiposDispositivos" [value]="td.idTipoDispositivo">
-            {{ td.nombreTipoDispositivo }}
+          <mat-option *ngFor="let u of listaTiposDispositivos" [value]="u.idTipoDispositivo">
+            {{ u.nombreTipoDispositivo }}
           </mat-option>
         </mat-select>
         <mat-error *ngIf="obtenerControlCampo('tipoDispositivo')?.errors?.['required']">
