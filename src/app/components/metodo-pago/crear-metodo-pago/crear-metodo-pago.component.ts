@@ -59,7 +59,7 @@ export class CrearMetodoPagoComponent implements OnInit {
         });
       }
       //fin hu3 y 4
-      this.router.navigate(['components/metodo-pago/lista']); //permite llevar a la ruta deseada después de presionar el botón
+      this.router.navigate(['components/metodo-pago']); //permite llevar a la ruta deseada después de presionar el botón
       this.form.reset;
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';

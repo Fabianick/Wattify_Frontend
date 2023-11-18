@@ -16,7 +16,7 @@ export class GuardService {
       return false;
     }
     if (requiredRole && this.lService.showRole() !== requiredRole) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/components']);
       return false;
     }
 

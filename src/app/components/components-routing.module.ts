@@ -21,6 +21,8 @@ import { DetallePagoComponent } from './detalle-pago/detalle-pago.component';
 import { CreaeditaDetallesComponent } from './detalle-pago/creaedita-detalles/creaedita-detalles.component';
 import { ListarDetallesComponent } from './detalle-pago/listar-detalles/listar-detalles.component';
 import { ListarDispositivosComponent } from './dispositivos/listar-dispositivos/listar-dispositivos.component';
+import { RolesComponent } from './roles/roles.component';
+import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles.component';
 
 
 const routes: Routes = [
@@ -34,50 +36,59 @@ const routes: Routes = [
     data: { 'requiredRole': 'ADMIN' }
   },
   {
+    path: 'roles',
+    component: RolesComponent,
+    children:[
+      { path: 'nuevo', component: CreaeditaRolesComponent },
+      { path: 'ediciones/:id', component: CreaeditaRolesComponent },
+    ],canActivate: [GuardService],
+    data: { 'requiredRole': 'ADMIN' }
+  },
+  {
     path: 'membresias',
     component: MembresiaComponent,
     children: [ //cambio de rutas
-    { path: 'nuevo', component: CrearMembresiaComponent}, //registrar
+    { path: 'nuevo', component: CrearMembresiaComponent,canActivate: [GuardService],
+    data: { 'requiredRole': 'ADMIN' }}, //registrar
       //{ path: 'nuevo', component: CrearMembresiaComponent ,canActivate: [GuardService],
       //data: { 'requiredRole': 'ADMIN' } }, //registrar
       { path: 'ediciones/:id', component: CrearMembresiaComponent }, //actualizar
-    ],
+    ]
   },
   {
     path: 'Tdispositivo',component: TdispositivoComponent,children: [
       { path: 'nuevo', component: CreaeditaDispositivoComponent,canActivate: [GuardService],
       data: { 'requiredRole': 'ADMIN' } }, //registrar
-      { path: 'lista', component: ListarDispositivoComponent }, //listar
       { path: 'ediciones/:id', component: CreaeditaDispositivoComponent }, //listar
-    ],
+    ]
   },
   {
     path: 'dispositivos',component: DispositivosComponent,children: [
-      { path: 'nuevo', component: CreaeditaDispositivosComponent }, //registrar
-      { path: 'lista', component: ListarDispositivosComponent }, //listar
+      { path: 'nuevo', component: CreaeditaDispositivosComponent,canActivate: [GuardService],
+      data: { 'requiredRole': 'ADMIN' } }, //registrar
       { path: 'ediciones/:id', component: CreaeditaDispositivosComponent }, //listar
-    ],
+    ]
   },
   {
     path: 'metodo-pago',component: MetodoPagoComponent,children: [ //cambio de rutas
-      { path: 'nuevo', component: CrearMetodoPagoComponent }, //registrar
-      { path: 'lista', component: ListarMetodoPagoComponent}, //listar
+      { path: 'nuevo', component: CrearMetodoPagoComponent,canActivate: [GuardService],
+      data: { 'requiredRole': 'USER' } }, //registrar
       { path: 'ediciones/:id', component: CrearMetodoPagoComponent }, //actualizar
-    ],
+    ]
   },
   {
     path: 'comprobante-pago',component: ComprobantePagoComponent,children: [ //cambio de rutas
-      { path: 'nuevo', component: CreaeditaComprobantesComponent }, //registrar
-      { path: 'lista', component: ListarComprobantesComponent}, //listar
+      { path: 'nuevo', component: CreaeditaComprobantesComponent,canActivate: [GuardService],
+      data: { 'requiredRole': 'ADMIN' } }, //registrar
       { path: 'ediciones/:id', component: CreaeditaComprobantesComponent }, //actualizar
-    ],
+    ]
   },
   {
     path: 'detalle-pago',component: DetallePagoComponent,children: [ //cambio de rutas
-      { path: 'nuevo', component: CreaeditaDetallesComponent }, //registrar
-      { path: 'lista', component: ListarDetallesComponent}, //listar
+      { path: 'nuevo', component: CreaeditaDetallesComponent,canActivate: [GuardService],
+      data: { 'requiredRole': 'ADMIN' } }, //registrar
       { path: 'ediciones/:id', component: CreaeditaDetallesComponent }, //actualizar
-    ],
+    ]
   },
   {
     path:'login',component: LoginComponent

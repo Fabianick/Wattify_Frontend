@@ -34,6 +34,9 @@ import { ListarComprobantesComponent } from './comprobante-pago/listar-comproban
 import { CreaeditaComprobantesComponent } from './comprobante-pago/creaedita-comprobantes/creaedita-comprobantes.component';
 import { ListarDetallesComponent } from './detalle-pago/listar-detalles/listar-detalles.component';
 import { DetallePagoComponent } from './detalle-pago/detalle-pago.component';
+import { RolesComponent } from './roles/roles.component';
+import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
+import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles.component';
 
 
 @NgModule({
@@ -60,7 +63,10 @@ import { DetallePagoComponent } from './detalle-pago/detalle-pago.component';
     CreaeditaDetallesComponent,
     ListarDetallesComponent,
     DetallePagoComponent,
-    ListarComprobantesComponent
+    ListarComprobantesComponent,
+    RolesComponent,
+    ListarRolesComponent,
+    CreaeditaRolesComponent
 
   ],
   imports: [

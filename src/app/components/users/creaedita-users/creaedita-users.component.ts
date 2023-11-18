@@ -57,7 +57,7 @@ export class CreaeditaUsersComponent implements OnInit{
       this.usuario.dni =  this.form.value.dni;
       this.usuario.celular = this.form.value.celular;
       if (this.edicion) {
-        this.uS.update(this.usuario).subscribe(() => {
+        this.uS.update(this.form.value.id,this.usuario).subscribe(() => {
           this.uS.list().subscribe((data) => {
             this.uS.setList(data);
           });

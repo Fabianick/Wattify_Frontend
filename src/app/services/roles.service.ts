@@ -1,57 +1,59 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Subject } from 'rxjs';
-import { Users } from '../models/users';
+import { Roles } from '../models/roles';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 const base_url = environment.base;
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class UsersService {
-  private url = `${base_url}/users`;
-  private listaCambio = new Subject<Users[]>();
-  constructor(private http: HttpClient) { }
+export class RolesService {
+  private url = `${base_url}/roles`;  //misma ruta del backend
+  private listaCambio = new Subject<Roles[]>();
+  constructor(private http: HttpClient) {}
   list() {
     let token = sessionStorage.getItem('token');
-
-    return this.http.get<Users[]>(this.url,{
+    return this.http.get<Roles[]>(this.url,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
-
-  insert(use: Users) {
+  insert(authority: string, user_id: number) {
     let token = sessionStorage.getItem('token');
 
-    return this.http.post(this.url, use,{
+    return this.http.post(`${this.url}?authority=${authority}&user_id=${user_id}`, null,{
       headers: new HttpHeaders()
-      .set('Authorization', `Bearer ${token}`)
-      .set('Content-Type', 'application/json'),
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
     });
   }
-
-  setList(listaNueva: Users[]) {
+  setList(listaNueva: Roles[]) {
     this.listaCambio.next(listaNueva);
   }
-
   getList() {
     return this.listaCambio.asObservable();
   }
+
   listId(id: number) {
     let token = sessionStorage.getItem('token');
 
-    return this.http.get<Users>(`${this.url}/${id}`,{
+    return this.http.get<Roles>(`${this.url}/${id}`,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
   }
-  update(id: number, u: Users) {
+  update(authority: string, user_id: number) {
     let token = sessionStorage.getItem('token');
+    const body = {
+      authority: authority,
+      user_id: user_id
+    };
 
-    return this.http.put(`${this.url}/${id}`, u,{
+    return this.http.put(`${this.url}?authority=${authority}&user_id=${user_id}`, null,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
@@ -66,4 +68,5 @@ export class UsersService {
         .set('Content-Type', 'application/json'),
     });
   }
+
 }

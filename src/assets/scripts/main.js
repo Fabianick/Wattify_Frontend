@@ -28,7 +28,7 @@ boton.addEventListener("click", function(event) {
 
 
 
-var mensaje = document.getElementById("mensaje"); 
+var mensaje = document.getElementById("mensaje");
 mensaje.addEventListener("click", function(event) {
   event.preventDefault();
   var nombre = document.getElementById("nombre").value;
@@ -50,7 +50,7 @@ mensaje.addEventListener("click", function(event) {
   if (texto.length < 3) {
     valido = false;
   }
-  
+
   if (valido) {
     Swal.fire({
       icon: "success",
@@ -85,13 +85,13 @@ mensaje.addEventListener("click", function(event) {
         }
     });
 
-    
-    
+
+
     const $dropdown = $(".dropdown");
     const $dropdownToggle = $(".dropdown-toggle");
     const $dropdownMenu = $(".dropdown-menu");
     const showClass = "show";
-    
+
     $(window).on("load resize", function() {
         if (this.matchMedia("(min-width: 992px)").matches) {
             $dropdown.hover(
@@ -112,7 +112,7 @@ mensaje.addEventListener("click", function(event) {
             $dropdown.off("mouseenter mouseleave");
         }
     });
-    
+
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
             $('.back-to-top').fadeIn('slow');
@@ -158,5 +158,5 @@ mensaje.addEventListener("click", function(event) {
             }
         }
     });
-    
+
 })(jQuery);
