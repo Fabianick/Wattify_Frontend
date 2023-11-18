@@ -15,6 +15,7 @@
       <button mat-button [matMenuTriggerFor]="menuMetoPago" *ngIf="validarRol()">Metodo Pago</button>
       <button mat-button [matMenuTriggerFor]="menuComprobantePago" *ngIf="validarRol()">Comprobante Pago</button>
       <button mat-button [matMenuTriggerFor]="menuDetallePago" *ngIf="validarRol()">Detalle Pago</button>
+      <button mat-button [matMenuTriggerFor]="menuReportes" *ngIf="validarRol()">Reportes</button>
       <button mat-button [matMenuTriggerFor]="menuSalir" *ngIf="validarRol()">Usuario</button>
     </div>
 
@@ -64,6 +65,12 @@
         <button mat-menu-item routerLink="components/detalle-pago/nuevo"*ngIf="role == 'ADMIN'">Registrar</button>
         <button mat-menu-item routerLink="components/detalle-pago">Listar</button>
         <!-- Agrega más elementos de menú si es necesario -->
+
+        <mat-menu #menuReportes="matMenu">
+          <button mat-menu-item routerLink="components/reportes"*ngIf="role == 'ADMIN'"> R Cantidad de dispositivos</button>
+          <!-- Agrega más elementos de menú si es necesario -->
+        </mat-menu>
+
       </mat-menu>
       <mat-menu #menuSalir="matMenu">
         <button mat-menu-item routerLink="components/login" (click)="cerrar()">

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { TipoDispositivo } from '../models/tipoDispositivo';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { DispositivosXTiposDTO } from '../models/DispositivosXTiposDTO';
 const base_url = environment.base;
 
 @Injectable({
@@ -67,6 +68,15 @@ export class TipoDispositivoService {
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
+    });
+  }
+  getDispositivosXtipo():Observable<DispositivosXTiposDTO[]>{
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<DispositivosXTiposDTO[]>(`${this.url}/CantidadDeDispositivosXTipo`,{
+      headers: new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Content-Type', 'application/json'),
     });
   }
 }

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 import { CreaeditaUsersComponent } from './users/creaedita-users/creaedita-users.component';
@@ -23,6 +23,7 @@ import { ListarDetallesComponent } from './detalle-pago/listar-detalles/listar-d
 import { ListarDispositivosComponent } from './dispositivos/listar-dispositivos/listar-dispositivos.component';
 import { RolesComponent } from './roles/roles.component';
 import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 
 const routes: Routes = [
@@ -62,6 +63,12 @@ const routes: Routes = [
       { path: 'ediciones/:id', component: CreaeditaDispositivoComponent }, //listar
     ]
   },
+  
+  {
+    path: 'reportes', component:ReporteComponent,    //VALIDAR
+
+  },
+
   {
     path: 'dispositivos',component: DispositivosComponent,children: [
       { path: 'nuevo', component: CreaeditaDispositivosComponent,canActivate: [GuardService],

@@ -37,6 +37,9 @@ import { DetallePagoComponent } from './detalle-pago/detalle-pago.component';
 import { RolesComponent } from './roles/roles.component';
 import { ListarRolesComponent } from './roles/listar-roles/listar-roles.component';
 import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles.component';
+import { ReporteComponent } from './reporte/reporte.component';
+import { ReportecantdispositivosComponent } from './reporte/reportecantdispositivos/reportecantdispositivos.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -66,7 +69,9 @@ import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles
     ListarComprobantesComponent,
     RolesComponent,
     ListarRolesComponent,
-    CreaeditaRolesComponent
+    CreaeditaRolesComponent,
+    ReporteComponent,
+    ReportecantdispositivosComponent
 
   ],
   imports: [
@@ -81,7 +86,8 @@ import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    NgChartsModule,
   ]
 })
 export class ComponentsModule { }
