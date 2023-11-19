@@ -26,6 +26,7 @@ import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles
 import { ReporteComponent } from './reporte/reporte.component';
 import { ChatgptComponent } from './chatgpt/chatgpt.component';
 import { ReporteconsumototaldehorasComponent } from './reporte/reporteconsumototaldehoras/reporteconsumototaldehoras.component';
+import { ReporteusersmembresiamontorecaudadoComponent } from './reporte/reporteusersmembresiamontorecaudado/reporteusersmembresiamontorecaudado.component';
 
 
 const routes: Routes = [
@@ -53,11 +54,17 @@ const routes: Routes = [
     children: [ //cambio de rutas
     { path: 'nuevo', component: CrearMembresiaComponent,canActivate: [GuardService],
     data: { 'requiredRole': 'ADMIN' }}, //registrar
-      //{ path: 'nuevo', component: CrearMembresiaComponent ,canActivate: [GuardService],
-      //data: { 'requiredRole': 'ADMIN' } }, //registrar
       { path: 'ediciones/:id', component: CrearMembresiaComponent }, //actualizar
     ]
+  },{
+    path:'reportes',
+    component:ReporteusersmembresiamontorecaudadoComponent, children:[
+      {
+        path: 'reporte-users-membresias-monto', component: ReporteusersmembresiamontorecaudadoComponent
+      }
+    ],canActivate: [GuardService]
   },
+
   {
     path: 'Tdispositivo',component: TdispositivoComponent,children: [
       { path: 'nuevo', component: CreaeditaDispositivoComponent,canActivate: [GuardService],

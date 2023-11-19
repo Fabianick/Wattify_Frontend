@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Membresia } from '../models/membresia';
+import { Membresia_X_UsersDTO } from '../models/Membresia_X_UsersDTO';
 
 const base_url = environment.base;
 
@@ -58,6 +59,14 @@ export class MembresiaService {
     let token = sessionStorage.getItem('token');
 
     return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+  getCount():Observable<Membresia_X_UsersDTO[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<Membresia_X_UsersDTO[]>(`${this.url}/usersXMembresiaXMontoRecaudado`,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
