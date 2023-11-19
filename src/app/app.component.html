@@ -78,12 +78,7 @@
           <button mat-menu-item routerLink="components/reportes"*ngIf="role == 'ADMIN'"> R Cantidad de dispositivos</button>
           <button mat-menu-item routerLink="components/reportes/reporte-consumo-total-horas"*ngIf="role == 'ADMIN'"> R Consumo total de horas</button>
           <!-- Agrega más elementos de menú si es necesario -->
-        </mat-menu>
-        
-        <mat-menu #menuReportes="matMenu">
-          <button mat-menu-item routerLink="components/reportes"*ngIf="role == 'ADMIN'"> R Cantidad de Membresias</button>
-          <button mat-menu-item routerLink="components/reportes/reporte-users-membresias-monto"*ngIf="role == 'ADMIN'"> R Usuarios y Monto Recaudado</button>
-          <!-- Agrega más elementos de menú si es necesario -->
+          <button mat-menu-item routerLink="components/reportes/reporte-users-membresias-monto"*ngIf="role == 'ADMIN'"> R Usuarios por Membresia y Monto Recaudado</button>
         </mat-menu>
 
       </mat-menu>

@@ -56,13 +56,6 @@ const routes: Routes = [
     data: { 'requiredRole': 'ADMIN' }}, //registrar
       { path: 'ediciones/:id', component: CrearMembresiaComponent }, //actualizar
     ]
-  },{
-    path:'reportes',
-    component:ReporteusersmembresiamontorecaudadoComponent, children:[
-      {
-        path: 'reporte-users-membresias-monto', component: ReporteusersmembresiamontorecaudadoComponent
-      }
-    ],canActivate: [GuardService]
   },
 
   {
@@ -79,6 +72,9 @@ const routes: Routes = [
       
       {
         path: 'reporte-consumo-total-horas', component: ReporteconsumototaldehorasComponent
+      },
+      {
+        path: 'reporte-users-membresias-monto', component: ReporteusersmembresiamontorecaudadoComponent
       }
     ],canActivate: [GuardService]    //VALIDAR   //VALIDAR
 

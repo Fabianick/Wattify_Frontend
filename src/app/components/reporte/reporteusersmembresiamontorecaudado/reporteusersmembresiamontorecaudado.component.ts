@@ -22,7 +22,12 @@ export class ReporteusersmembresiamontorecaudadoComponent implements OnInit{
       this.barChartData=[{
         data:data.map(item=>item.cantidadUsuarios),
         label:'Cantidad de Usuarios por Membresia',
-        },
+        }
+      ];
+      this.barChartData=[{
+        data:data.map(item=>item.montoRecaudado),
+        label:'Monto Recaudado por Membresia',
+        }
       ];
     });
   }
