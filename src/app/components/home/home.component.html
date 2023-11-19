@@ -109,14 +109,14 @@
                 </div>
             </div>
             <div class="col-lg-6">
-                <div class="d-flex align-items-center justify-content-center">
+                <div class="d-flex align-items-center justify-content-center titulo">
                     <a href="index.html" class="navbar-brand ms-lg-5">
                         <h1 class="m-0 display-4 text-primary"><span class="text-secondary">Wattify</span></h1>
                     </a>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="d-flex align-items-center justify-content-end">
+            <div class="col-lg-6">
+                <div class="d-flex align-items-center justify-content-end socialnet">
                     <a class="btn btn-primary btn-square rounded-circle me-2" href="https://twitter.com/UPCedu"
                         target="_blank"><i class="fab fa-twitter"></i></a>
                     <a class="btn btn-primary btn-square rounded-circle me-2" href="https://www.facebook.com/upcedu"
@@ -142,21 +142,14 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="consumo.html" class="nav-item nav-link nav-option">Consumption</a>
-                <a href="tips.html" class="nav-item nav-link nav-option">Tips</a>
-                <a href="ajustes.html" class="nav-item nav-link nav-option">Settings</a>
-                <a href="nosotros.html" class="nav-item nav-link">About Us</a>
-                <a href="contacto.html" class="nav-item nav-link">Contact Us</a>
-                <div id="user-menu" class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle btn-primary user-name" data-bs-toggle="dropdown"></a>
-                    <div class="dropdown-menu m-0">
-                        <a id="logout-button" class="dropdown-item" role="button">Logout</a>
-                    </div>
-                </div>
+                <a href="#products" class="nav-item nav-link">Subscribe</a>
+                <a href="#about us" class="nav-item nav-link">About us</a>
+                <a href="#contact-section" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
     <!-- Navbar End -->
+
 
     <!-- Carousel Start -->
     <div class="container-fluid p-0">
@@ -169,12 +162,14 @@
                         <div class="text-start p-5" style="max-width: 900px;">
                             <h3 class="text-black">Group 1</h3>
                             <h1 class="titulo display-1 text-black mb-md-4">Start your subscription with Wattify</h1>
-                            <a href="components/login" class="btn btn-primary py-md-3 px-md-5 me-3 boton-login">Login</a>
                             <a href="components/login"
-                                class="btn btn-secondary py-md-3 px-md-5 boton-registro">Register now</a>
+                                class="btn btn-primary py-md-3 px-md-5 me-3 boton-login">Login</a>
+                            <a href="components/login" class="btn btn-secondary py-md-3 px-md-5 boton-registro">Register
+                                now</a>
                         </div>
                     </div>
                 </div>
+                
                 <div class="carousel-item">
                     <img class="w-100" src="../../../assets/img/carousel-2.jpg" alt="Image">
                     <div
@@ -182,13 +177,16 @@
                         <div class="text-start p-5" style="max-width: 900px;">
                             <h3 class="text-white">Group 1</h3>
                             <h1 class="titulo display-1 text-white mb-md-4">Start your subscription with Wattify</h1>
-                            <a href="components/login" class="btn btn-primary py-md-3 px-md-5 me-3 boton-login">Login</a>
                             <a href="components/login"
-                                class="btn btn-secondary py-md-3 px-md-5 boton-registro">Register now</a>
+                                class="btn btn-primary py-md-3 px-md-5 me-3 boton-login">Login</a>
+                            <a href="components/login" class="btn btn-secondary py-md-3 px-md-5 boton-registro">Register
+                                now</a>
                         </div>
                     </div>
                 </div>
+                
             </div>
+            <!-- 
             <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -197,262 +195,288 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
+            -->
         </div>
     </div>
     <!-- Carousel End -->
 
     <!-- Products Start -->
-    <div class="container-fluid py-5">
-        <div class="container">
-            <div class="mx-auto text-center mb-4" style="max-width: 500px;">
-                <h6 class="text-primary text-uppercase">Memberships</h6>
-                <h1 class="display-5">Subscribe to one of our memberships</h1>
-            </div>
-        </div>
-    </div>
-    <section class="price-comparison">
-        <div class="price-column">
-            <div class="price-header">
-                <div class="price">
-                    <div class="dollar-sign"></div>
-                    <div class="dollar-sign"></div>
-                    Free
+    <section id="products">
+        <div class="container-fluid py-5">
+            <div class="container">
+                <div class="mx-auto text-center mb-4" style="max-width: 500px;">
+                    <h6 class="text-primary text-uppercase">Memberships</h6>
+                    <h1 class="display-5">Subscribe to one of our memberships</h1>
                 </div>
-                <div class="plan-name">Savings+</div>
             </div>
-            <div class="divider"></div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Limited consumption report
-            </div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Limited tips
-            </div>
-            <div class="feature inactive">
-                <img src="../../../assets/img/x-square.svg">
-                24/7 assistance
-            </div>
-            <div class="feature inactive">
-                <img src="../../../assets/img/x-square.svg">
-                Select member
-            </div>
-
-            <a href="components/login">
-                <button class="cta btn-primary">Subscribe</button>
-            </a>
         </div>
-        <div class="price-column popular">
-            <div class="most-popular">Most Popular</div>
-            <div class="price-header">
-                <div class="price">
-                    <div class="dollar-sign">S/</div>
-                    24.90
-                    <div class="per-month">/month</div>
+        <section class="price-comparison">
+            <div class="price-column">
+                <div class="price-header">
+                    <div class="price">
+                        <div class="dollar-sign"></div>
+                        <div class="dollar-sign">S/</div>
+                        9.90
+                        <div class="per-month">/mensual</div>
+                    </div>
+                    <div class="plan-name">Savings+</div>
                 </div>
-                <div class="plan-name">EcoSmart</div>
-            </div>
-            <div class="divider"></div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Monthly electricity report
-            </div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Daily electricity report
-            </div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Unlimited tips
-            </div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Additional features
-            </div>
-            <div class="feature inactive">
-                <img src="../../../assets/img/x-square.svg">
-                Special service for businesses
-            </div>
-
-            <a href="components/login">
-                <button class="cta">Subscribe</button>
-            </a>
-        </div>
-        <div class="price-column">
-            <div class="price-header">
-                <div class="price">
-                    <div class="dollar-sign">S/</div>
-                    34.90
-                    <div class="per-month">/month</div>
+                <div class="divider"></div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Limited consumption report
                 </div>
-                <div class="plan-name">Pro</div>
-            </div>
-            <div class="divider"></div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Monthly electricity report
-            </div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Daily electricity report
-            </div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Unlimited tips
-            </div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                24/7 support
-            </div>
-            <div class="feature">
-                <img src="../../../assets/img/check-circle.svg">
-                Services for businesses
-            </div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Limited tips
+                </div>
+                <div class="feature inactive">
+                    <img src="../../../assets/img/x-square.svg">
+                    24/7 assistance
+                </div>
+                <div class="feature inactive">
+                    <img src="../../../assets/img/x-square.svg">
+                    Select member
+                </div>
 
-            <a href="components/login">
-                <button class="cta btn-primary">Subscribe</button>
-            </a>
-        </div>
+                <a href="components/login">
+                    <button class="cta btn-primary">Subscribe</button>
+                </a>
+            </div>
+            <div class="price-column popular">
+                <div class="most-popular">Most Popular</div>
+                <div class="price-header">
+                    <div class="price">
+                        <div class="dollar-sign">S/</div>
+                        29.90
+                        <div class="per-month">/semestral</div>
+                    </div>
+                    <div class="plan-name">EcoSmart</div>
+                </div>
+                <div class="divider"></div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Monthly electricity report
+                </div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Daily electricity report
+                </div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Unlimited tips
+                </div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Additional features
+                </div>
+                <div class="feature inactive">
+                    <img src="../../../assets/img/x-square.svg">
+                    Special service for businesses
+                </div>
+
+                <a href="components/login">
+                    <button class="cta">Subscribe</button>
+                </a>
+            </div>
+            <div class="price-column">
+                <div class="price-header">
+                    <div class="price">
+                        <div class="dollar-sign">S/</div>
+                        49.90
+                        <div class="per-month">/anual</div>
+                    </div>
+                    <div class="plan-name">Pro</div>
+                </div>
+                <div class="divider"></div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Monthly electricity report
+                </div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Daily electricity report
+                </div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Unlimited tips
+                </div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    24/7 support
+                </div>
+                <div class="feature">
+                    <img src="../../../assets/img/check-circle.svg">
+                    Services for businesses
+                </div>
+
+                <a href="components/login">
+                    <button class="cta btn-primary">Subscribe</button>
+                </a>
+            </div>
+        </section>
     </section>
     <!-- Products End -->
 
 
     <!-- Facts Start -->
-    <div class="container-fluid bg-primary facts py-5 mb-5">
-        <div class="container py-5">
-            <div class="row gx-5 gy-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex">
-                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-star fs-4 text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-black">Happy Citizens</h5>
-                            <h1 class="display-5 text-black mb-0" data-toggle="counter-up">250</h1>
-                        </div>
-                    </div>
+    <section id="about us">
+        <div class="container-fluid bg-primary facts py-5 mb-5">
+            <div class="container py-5 text-center">
+                <div class="text-descrip">
+                    <h3 class="h3 custom-paragraph" >
+                    "
+                    En Wattify, nos especializamos en optimizar el uso de la electricidad para ayudar a empresas y hogares a reducir costos y promover la sostenibilidad."    
+                    </h3>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex">
-                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-users fs-4 text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-black">Saving Companies</h5>
-                            <h1 class="display-5 text-black mb-0" data-toggle="counter-up">120</h1>
-                        </div>
+                <div class="row g-4 gy-4 justify-content-center">
+                    <div class="col-lg-4 about-image">
+                        <img src="assets/img/about.png" alt="about Image" class="img-fluid mb-4">
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex">
-                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-check fs-4 text-white"></i>
+                    <div class="col-lg-8">
+                        <div class="row g-4 gy-4">
+                            <div class="col-lg-3 col-md-6">
+
+                                <div class="d-flex">
+                                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="fa fa-star fs-4 text-white"></i>
+                                    </div>
+                                    <div class="ps-4">
+                                        <h5 class="text-black">Happy Citizens</h5>
+                                        <h1 class="display-5 text-black mb-0" data-toggle="counter-up">250</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="d-flex">
+                                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="fa fa-users fs-4 text-white"></i>
+                                    </div>
+                                    <div class="ps-4">
+                                        <h5 class="text-black">Saving Companies</h5>
+                                        <h1 class="display-5 text-black mb-0" data-toggle="counter-up">120</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="d-flex">
+                                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="fa fa-check fs-4 text-white"></i>
+                                    </div>
+                                    <div class="ps-4">
+                                        <h5 class="text-black">Saved kWh</h5>
+                                        <h1 class="display-5 text-black mb-0" data-toggle="counter-up">900</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <div class="d-flex">
+                                    <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                                        style="width: 60px; height: 60px;">
+                                        <i class="fa fa-mug-hot fs-4 text-white"></i>
+                                    </div>
+                                    <div class="ps-4">
+                                        <h5 class="text-black" style="white-space: nowrap;">Customer Experience</h5>
+                                        <h1 class="display-5 text-black mb-0" data-toggle="counter-up"
+                                            style="vertical-align: middle;">100</h1>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <div class="ps-4">
-                            <h5 class="text-black">Saved kWh</h5>
-                            <h1 class="display-5 text-black mb-0" data-toggle="counter-up">900</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="d-flex">
-                        <div class="bg-secondary rounded-circle d-flex align-items-center justify-content-center mb-3"
-                            style="width: 60px; height: 60px;">
-                            <i class="fa fa-mug-hot fs-4 text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="text-black">Customer Experience</h5>
-                            <h1 class="display-5 text-black mb-0" data-toggle="counter-up">100</h1>
-                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- Facts End -->
 
     <!-- Footer Start -->
-
-    <div class="container-fluid bg-footer bg-primary text-white mt-5">
-        <div class="container">
-            <div class="row gx-5">
-                <div class="col-lg-8 col-md-6">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 col-md-12 pt-5 mb-5">
-                            <h4 class="text-black mb-4">Contact Us</h4>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-geo-alt text-black me-2"></i>
-                                <p class="text-black mb-0">Prolongación Primavera 2390, Monterrico, Santiago de Surco
-                                </p>
+    <footer id="contact-section">
+        <div class="container-fluid bg-primary footer py-5 mb-5">
+            <div class="container py-5 text-start">
+                <div class="row g-4 gy-4 justify-content-start">
+                    <div class="col-lg-8 col-md-6">
+                        <div class="d-flex">
+                            <div class="col-lg-4 col-md-12 pt-5 mb-5 footer">
+                                <h4 class="text-black mb-4">Contact Us</h4>
+                                <div class="d-flex mb-2">
+                                    <i class="bi bi-geo-alt text-black me-2"></i>
+                                    <p class="text-black mb-0">Prolongación Primavera 2390, Monterrico, Santiago de
+                                        Surco
+                                    </p>
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <i class="bi bi-envelope-open text-black me-2"></i>
+                                    <p class="text-black mb-0">contacto@wattify.com</p>
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <i class="bi bi-telephone text-black me-2"></i>
+                                    <p class="text-black mb-0">(01) 630-3333</p>
+                                </div>
+                                <div class="d-flex mt-4">
+                                    <a class="btn btn-secondary btn-square rounded-circle me-2"
+                                        href="https://twitter.com/UPCedu" target="_blank"><i
+                                            class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-secondary btn-square rounded-circle me-2"
+                                        href="https://www.facebook.com/upcedu" target="_blank"><i
+                                            class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-secondary btn-square rounded-circle me-2"
+                                        href="https://www.linkedin.com/school/universidad-peruana-de-ciencias-aplicadas/"
+                                        target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-secondary btn-square rounded-circle"
+                                        href="https://www.instagram.com/upcedu/" target="_blank"><i
+                                            class="fab fa-instagram"></i></a>
+                                </div>
                             </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-envelope-open text-black me-2"></i>
-                                <p class="text-black mb-0">contacto@wattify.com</p>
+                            <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5 footer">
+                                <h4 class="text-black mb-4">Quick Access</h4>
+                                <div class="d-flex flex-column justify-content-start">
+                                    <a class="text-black mb-2" href="index.html"><i
+                                            class="bi bi-arrow-right text-black me-2"></i>Home</a>
+                                    <a class="text-black mb-2" href="nosotros.html"><i
+                                            class="bi bi-arrow-right text-black me-2"></i>About Us</a>
+                                    <a class="text-black mb-2" href="contacto.html"><i
+                                            class="bi bi-arrow-right text-black me-2"></i>Contact Us</a>
+                                </div>
                             </div>
-                            <div class="d-flex mb-2">
-                                <i class="bi bi-telephone text-black me-2"></i>
-                                <p class="text-black mb-0">(01) 630-3333</p>
+                            <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5 footer">
+                                <h4 class="text-black mb-4">Policy and Terms</h4>
+                                <div class="d-flex flex-column justify-content-start">
+                                    <a class="text-black mb-2" href="https://www.consumidor.gob.pe/tus-derechos"><i
+                                            class="bi bi-arrow-right text-black me-2"></i>Terms and Conditions</a>
+                                    <a class="text-black mb-2" href="https://www.consumidor.gob.pe/tus-derechos"><i
+                                            class="bi bi-arrow-right text-black me-2"></i>Privacy Policy</a>
+                                    <a class="text-black mb-2"
+                                        href="https://reclamos.servicios.gob.pe/?institution_id=3"><i
+                                            class="bi bi-arrow-right text-black me-2"></i>Complaint book</a>
+                                </div>
                             </div>
-                            <div class="d-flex mt-4">
-                                <a class="btn btn-secondary btn-square rounded-circle me-2"
-                                    href="https://twitter.com/UPCedu" target="_blank"><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-secondary btn-square rounded-circle me-2"
-                                    href="https://www.facebook.com/upcedu" target="_blank"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-secondary btn-square rounded-circle me-2"
-                                    href="https://www.linkedin.com/school/universidad-peruana-de-ciencias-aplicadas/"
-                                    target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                                <a class="btn btn-secondary btn-square rounded-circle"
-                                    href="https://www.instagram.com/upcedu/" target="_blank"><i
-                                        class="fab fa-instagram"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <h4 class="text-black mb-4">Quick Access</h4>
-                            <div class="d-flex flex-column justify-content-start">
-                                <a class="text-black mb-2" href="index.html"><i
-                                        class="bi bi-arrow-right text-black me-2"></i>Home</a>
-                                <a class="text-black mb-2" href="nosotros.html"><i
-                                        class="bi bi-arrow-right text-black me-2"></i>About Us</a>
-                                <a class="text-black mb-2" href="contacto.html"><i
-                                        class="bi bi-arrow-right text-black me-2"></i>Contact Us</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5">
-                            <h4 class="text-black mb-4">Policy and Terms</h4>
-                            <div class="d-flex flex-column justify-content-start">
-                                <a class="text-black mb-2" href="https://www.consumidor.gob.pe/tus-derechos"><i
-                                        class="bi bi-arrow-right text-black me-2"></i>Terms and Conditions</a>
-                                <a class="text-black mb-2" href="https://www.consumidor.gob.pe/tus-derechos"><i
-                                        class="bi bi-arrow-right text-black me-2"></i>Privacy Policy</a>
-                                <a class="text-black mb-2" href="https://reclamos.servicios.gob.pe/?institution_id=3"><i
-                                        class="bi bi-arrow-right text-black me-2"></i>Complaint book</a>
+                            <div class="col-lg-4 col-md-12 pt-0 pt-lg-5 mb-5 footer">
+                                <div
+                                    class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
+                                    <h4 class="text-white">Newsletter</h4>
+                                    <h6 class="text-white">Subscribe to receive news</h6>
+                                    <p>The latest developments in eco-friendly technology</p>
+                                    <form action="">
+                                        <div class="input-group">
+                                            <input type="text" id="email" class="form-control border-white p-3"
+                                                placeholder="Su e-mail">
+                                            <button id="suscribirse" class="btn btn-primary">Suscribe</button>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 mt-lg-n5">
-                    <div
-                        class="d-flex flex-column align-items-center justify-content-center text-center h-100 bg-secondary p-5">
-                        <h4 class="text-white">Newsletter</h4>
-                        <h6 class="text-white">Subscribe to receive news</h6>
-                        <p>The latest developments in eco-friendly technology</p>
-                        <form action="">
-                            <div class="input-group">
-                                <input type="text" id="email" class="form-control border-white p-3"
-                                    placeholder="Su e-mail">
-                                <button id="suscribirse" class="btn btn-primary">Suscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
             </div>
         </div>
-    </div>
+    </footer>
 
     <!-- Footer End -->
 
