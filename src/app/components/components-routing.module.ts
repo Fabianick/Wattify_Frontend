@@ -25,6 +25,7 @@ import { RolesComponent } from './roles/roles.component';
 import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles.component';
 import { ReporteComponent } from './reporte/reporte.component';
 import { ChatgptComponent } from './chatgpt/chatgpt.component';
+import { ReporteconsumototaldehorasComponent } from './reporte/reporteconsumototaldehoras/reporteconsumototaldehoras.component';
 
 
 const routes: Routes = [
@@ -66,7 +67,13 @@ const routes: Routes = [
   },
 
   {
-    path: 'reportes', component:ReporteComponent,    //VALIDAR
+    path: 'reportes', component:ReporteComponent, children:[
+
+      
+      {
+        path: 'reporte-consumo-total-horas', component: ReporteconsumototaldehorasComponent
+      }
+    ],canActivate: [GuardService]    //VALIDAR   //VALIDAR
 
   },
   {

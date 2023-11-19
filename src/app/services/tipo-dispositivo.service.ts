@@ -4,6 +4,7 @@ import { TipoDispositivo } from '../models/tipoDispositivo';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DispositivosXTiposDTO } from '../models/DispositivosXTiposDTO';
+import { ConsumoHorasDispositivoDTO } from '../models/ConsumoHorasDispositivoDTO';
 const base_url = environment.base;
 
 @Injectable({
@@ -74,6 +75,15 @@ export class TipoDispositivoService {
     let token = sessionStorage.getItem('token');
 
     return this.http.get<DispositivosXTiposDTO[]>(`${this.url}/CantidadDeDispositivosXTipo`,{
+      headers: new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Content-Type', 'application/json'),
+    });
+  }
+  getConsumoHorasByTipoDispositivo():Observable<ConsumoHorasDispositivoDTO[]>{
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<ConsumoHorasDispositivoDTO[]>(`${this.url}/ConsumoHorasByTipoDispositivo`,{
       headers: new HttpHeaders()
       .set('Authorization', `Bearer ${token}`)
       .set('Content-Type', 'application/json'),

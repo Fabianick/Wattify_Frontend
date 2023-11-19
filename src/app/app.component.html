@@ -76,6 +76,7 @@
 
         <mat-menu #menuReportes="matMenu">
           <button mat-menu-item routerLink="components/reportes"*ngIf="role == 'ADMIN'"> R Cantidad de dispositivos</button>
+          <button mat-menu-item routerLink="components/reportes/reporte-consumo-total-horas"*ngIf="role == 'ADMIN'"> R Consumo total de horas</button>
           <!-- Agrega más elementos de menú si es necesario -->
         </mat-menu>
 

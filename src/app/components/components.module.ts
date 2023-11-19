@@ -41,6 +41,7 @@ import { ReporteComponent } from './reporte/reporte.component';
 import { ReportecantdispositivosComponent } from './reporte/reportecantdispositivos/reportecantdispositivos.component';
 import { NgChartsModule } from 'ng2-charts';
 import { ChatgptComponent } from './chatgpt/chatgpt.component';
+import { ReporteconsumototaldehorasComponent } from './reporte/reporteconsumototaldehoras/reporteconsumototaldehoras.component';
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { ChatgptComponent } from './chatgpt/chatgpt.component';
     CreaeditaRolesComponent,
     ReporteComponent,
     ReportecantdispositivosComponent,
-    ChatgptComponent
+    ChatgptComponent,
+    ReporteconsumototaldehorasComponent
 
   ],
   imports: [
