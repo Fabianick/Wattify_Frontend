@@ -15,6 +15,14 @@
       <button mat-button [matMenuTriggerFor]="menuMetoPago" *ngIf="validarRol()">Metodo Pago</button>
       <button mat-button [matMenuTriggerFor]="menuComprobantePago" *ngIf="validarRol()">Comprobante Pago</button>
       <button mat-button [matMenuTriggerFor]="menuDetallePago" *ngIf="validarRol()">Detalle Pago</button>
+      <button mat-button routerLink="components/chatgpt" >ChatGPT</button>
+      <a class="nav-link active" aria-current="page" routerLink="components/chatgpt" class="btn-neon">
+        <span id="span1"></span>
+        <span id="span2"></span>
+        <span id="span3"></span>
+        <span id="span4"></span>
+        CHAT GPT
+    </a>
       <button mat-button [matMenuTriggerFor]="menuReportes" *ngIf="validarRol()">Reportes</button>
       <button mat-button [matMenuTriggerFor]="menuSalir" *ngIf="validarRol()">Usuario</button>
     </div>

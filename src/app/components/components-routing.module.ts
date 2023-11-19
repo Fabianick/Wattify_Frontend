@@ -24,6 +24,7 @@ import { ListarDispositivosComponent } from './dispositivos/listar-dispositivos/
 import { RolesComponent } from './roles/roles.component';
 import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles.component';
 import { ReporteComponent } from './reporte/reporte.component';
+import { ChatgptComponent } from './chatgpt/chatgpt.component';
 
 
 const routes: Routes = [
@@ -63,9 +64,13 @@ const routes: Routes = [
       { path: 'ediciones/:id', component: CreaeditaDispositivoComponent }, //listar
     ]
   },
-  
+
   {
     path: 'reportes', component:ReporteComponent,    //VALIDAR
+
+  },
+  {
+    path: 'chatgpt', component:ChatgptComponent,  
 
   },
 

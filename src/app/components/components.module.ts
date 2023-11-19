@@ -40,6 +40,7 @@ import { CreaeditaRolesComponent } from './roles/creaedita-roles/creaedita-roles
 import { ReporteComponent } from './reporte/reporte.component';
 import { ReportecantdispositivosComponent } from './reporte/reportecantdispositivos/reportecantdispositivos.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ChatgptComponent } from './chatgpt/chatgpt.component';
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import { NgChartsModule } from 'ng2-charts';
     ListarRolesComponent,
     CreaeditaRolesComponent,
     ReporteComponent,
-    ReportecantdispositivosComponent
+    ReportecantdispositivosComponent,
+    ChatgptComponent
 
   ],
   imports: [
