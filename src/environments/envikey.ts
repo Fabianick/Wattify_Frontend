@@ -1,3 +1,3 @@
 export const envikey={
-  apiKey:'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'
+  apiKey:'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'
 }

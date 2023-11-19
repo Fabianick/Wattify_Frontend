@@ -13,13 +13,13 @@ export class ListarDetallesComponent implements OnInit{
   datasource: MatTableDataSource<detallepago> = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   displayedColumns: string[] = [
-    'Codigo',
-    'Cantidad_Dispositivo',
-    'Consumo_Dispositivo',
-    'Costo_Dispositivo',
-    'Sub_Total_Pago',
-    'Comprobante_Pago',
-    'Membresia',
+    'codigo',
+    'cantidad_dispositivo',
+    'consumo_dispositivo',
+    'costo_dispositivo',
+    'sub_total_pago',
+    'comprobante_pago',
+    'membresia',
     'accion01',
     'accion02',
   ];

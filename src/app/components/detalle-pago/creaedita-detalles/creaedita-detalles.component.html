@@ -11,7 +11,7 @@
       <form [formGroup]="form" (submit)="aceptar()" class="example-form">
         <mat-form-field class="example-full-width" *ngIf="edicion">
           <mat-label>id detalle</mat-label>
-          <input matInput placeholder="Id" formControlName="id" />
+          <input matInput placeholder="Id" formControlName="id" [readonly]="edicion"/>
         </mat-form-field>
         <br />
 
@@ -78,7 +78,7 @@
         <mat-form-field class="example-full-width">
           <mat-label>Comprobante de Pago</mat-label>
           <mat-select formControlName="comprobante_pago">
-          <mat-option *ngFor="let dp of listacomprobante" [value]="dp.id">
+          <mat-option *ngFor="let dp of listacomprobante" [value]="dp.id" [disabled]="edicion">
           {{ dp.id }}
           </mat-option>
           </mat-select>
@@ -94,7 +94,7 @@
         <mat-form-field class="example-full-width">
           <mat-label>Membresia</mat-label>
           <mat-select formControlName="membresia">
-          <mat-option *ngFor="let mp of listamembresia" [value]="mp.id_Membresia">
+          <mat-option *ngFor="let mp of listamembresia" [value]="mp.id_Membresia" [disabled]="edicion">
           {{ mp.tipoMembresia }}
           </mat-option>
           </mat-select>
