@@ -27,6 +27,8 @@ import { ReporteComponent } from './reporte/reporte.component';
 import { ChatgptComponent } from './chatgpt/chatgpt.component';
 import { ReporteconsumototaldehorasComponent } from './reporte/reporteconsumototaldehoras/reporteconsumototaldehoras.component';
 import { ReporteusersmembresiamontorecaudadoComponent } from './reporte/reporteusersmembresiamontorecaudado/reporteusersmembresiamontorecaudado.component';
+import { ReportecantidadbyusuarioComponent } from './reporte/reportecantidadbyusuario/reportecantidadbyusuario.component';
+import { ReportesumaxmetedopagoComponent } from './reporte/reportesumaxmetedopago/reportesumaxmetedopago.component';
 
 
 const routes: Routes = [
@@ -68,19 +70,23 @@ const routes: Routes = [
 
   {
     path: 'reportes', component:ReporteComponent, children:[
-
-      
       {
         path: 'reporte-consumo-total-horas', component: ReporteconsumototaldehorasComponent
       },
       {
         path: 'reporte-users-membresias-monto', component: ReporteusersmembresiamontorecaudadoComponent
+      },
+      {
+        path: 'reporte-cantidad-users', component: ReportecantidadbyusuarioComponent
+      },
+      {
+        path: 'reporte-suma-x-metodo-pago', component: ReportesumaxmetedopagoComponent
       }
-    ],canActivate: [GuardService]    //VALIDAR   //VALIDAR
+    ]  //VALIDAR   //VALIDAR
 
   },
   {
-    path: 'chatgpt', component:ChatgptComponent,  
+    path: 'chatgpt', component:ChatgptComponent,
 
   },
 

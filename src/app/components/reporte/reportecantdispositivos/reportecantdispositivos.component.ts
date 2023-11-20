@@ -14,9 +14,9 @@ export class ReportecantdispositivosComponent implements OnInit{
   };
 
   barChartLabels:string[] = [];
-  barCharType: ChartType = 'bar'  //Tipo de gráfico que quieres utilizar
-  barChartLegend=true    //para que nos muestre la leyenda
-  barChartData:ChartDataset[]=[]  //para pasar la data
+  barCharType: ChartType = 'bar';//Tipo de gráfico que quieres utilizar
+  barChartLegend=true;    //para que nos muestre la leyenda
+  barChartData:ChartDataset[]=[];  //para pasar la data
 
   constructor(private tipodis:TipoDispositivoService){}
 
@@ -30,6 +30,6 @@ export class ReportecantdispositivosComponent implements OnInit{
         },
       ];
     });
-    
+
   }
 }

@@ -9,9 +9,9 @@
     <div class="container" style="text-align: center">
         <h2>Registro de Tipo de Dispositivos</h2>
         <form [formGroup]="form" (submit)="aceptar()" class="example-form">
-          <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-form-field class="example-full-width" *ngIf="edicion" >
             <mat-label>id</mat-label>
-            <input matInput placeholder="Id" formControlName="idTipoDispositivo" />
+            <input matInput placeholder="Id" formControlName="idTipoDispositivo" [readonly]="true"/>
           </mat-form-field>
           <br />
           <mat-form-field class="example-full-width">
@@ -48,6 +48,6 @@
           <p>{{ mensaje }}</p>
         </form>
       </div>
-    
+
 </body>
 </html>

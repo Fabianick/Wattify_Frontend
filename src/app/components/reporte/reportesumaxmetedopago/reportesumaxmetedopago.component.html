@@ -6,21 +6,19 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
-    <div style="text-align: center;">
-        <h1>Cantidad de Usuarios por Membresia y Monto Recaudado</h1>
+    <div style="text-align: center;" class="container">
+        <h1>La suma total pagada por metodo de pago</h1>
     </div>
     <div style="text-align: center;">
         <canvas
+
         baseChart
         [datasets]="barChartData"
         [labels]="barChartLabels"
         [options]="barChartOptions"
         [legend]="barChartLegend"
         [type]="barChartType"
-        >
-        </canvas>
+        ></canvas>
     </div>
-</div>
 </body>
 </html>

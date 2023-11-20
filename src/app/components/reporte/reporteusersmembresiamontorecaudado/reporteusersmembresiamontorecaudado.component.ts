@@ -13,8 +13,8 @@ export class ReporteusersmembresiamontorecaudadoComponent implements OnInit{
   };
   barChartLabels:string []=[];
   barChartType:ChartType='doughnut';
-  barChartLegend=true
-  barChartData:ChartDataset[]=[]
+  barChartLegend=true;
+  barChartData:ChartDataset[]=[];
  constructor(private mS:MembresiaService){}
   ngOnInit(): void {
     this.mS.getCount().subscribe(data=>{

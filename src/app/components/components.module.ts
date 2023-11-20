@@ -43,6 +43,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { ChatgptComponent } from './chatgpt/chatgpt.component';
 import { ReporteconsumototaldehorasComponent } from './reporte/reporteconsumototaldehoras/reporteconsumototaldehoras.component';
 import { ReporteusersmembresiamontorecaudadoComponent } from './reporte/reporteusersmembresiamontorecaudado/reporteusersmembresiamontorecaudado.component';
+import { ReportecantidadbyusuarioComponent } from './reporte/reportecantidadbyusuario/reportecantidadbyusuario.component';
+import { ReportesumaxmetedopagoComponent } from './reporte/reportesumaxmetedopago/reportesumaxmetedopago.component';
 
 
 @NgModule({
@@ -77,7 +79,9 @@ import { ReporteusersmembresiamontorecaudadoComponent } from './reporte/reporteu
     ReportecantdispositivosComponent,
     ChatgptComponent,
     ReporteconsumototaldehorasComponent,
-    ReporteusersmembresiamontorecaudadoComponent
+    ReporteusersmembresiamontorecaudadoComponent,
+    ReportecantidadbyusuarioComponent,
+    ReportesumaxmetedopagoComponent,
 
   ],
   imports: [

@@ -141,6 +141,13 @@ export class CrearMembresiaComponent implements OnInit {
           precio: new FormControl(data.precio),
           user: new FormControl(data.user.id)
         });
+         this.form.get('tipoMembresia')?.valueChanges.subscribe((tipoSeleccionado) => {
+      this.actualizarPrecio(tipoSeleccionado);
+
+      const fechaInicio = this.form.get('fechaInicio')?.value;
+      const fechaExpiracion = this.calcularFechaExpiracion(tipoSeleccionado, fechaInicio);
+      this.form.get('fechaFin')?.setValue(fechaExpiracion);
+    });
       });
     }
   }

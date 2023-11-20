@@ -1,30 +1,28 @@
 <mat-sidenav-container style="height: 100%;">
-  <mat-sidenav mode="side" opened *ngIf="verificar()">
+  <mat-sidenav mode="side" opened *ngIf="verificar()" class="custom-sidebar">
 
 
     <!-- Contenido de tu barra lateral aquí -->
-    <mat-toolbar >
-      <mat-icon>menu</mat-icon>
-    </mat-toolbar>
+
       <div class="sidebar-content">
-      <button mat-button [matMenuTriggerFor]="menuUsuarios" *ngIf="role == 'ADMIN'" >Usuarios</button>
-      <button mat-button [matMenuTriggerFor]="menuRoles" *ngIf="role == 'ADMIN'" >Roles</button>
-      <button mat-button [matMenuTriggerFor]="menuMembresias" *ngIf="validarRol()">Membresias</button>
-      <button mat-button [matMenuTriggerFor]="menuTDispositivo" *ngIf="validarRol()">Tipo Dispositivo</button>
-      <button mat-button [matMenuTriggerFor]="menuDispositivo" *ngIf="validarRol()">Dispositivos</button>
-      <button mat-button [matMenuTriggerFor]="menuMetoPago" *ngIf="validarRol()">Metodo Pago</button>
-      <button mat-button [matMenuTriggerFor]="menuComprobantePago" *ngIf="validarRol()">Comprobante Pago</button>
-      <button mat-button [matMenuTriggerFor]="menuDetallePago" *ngIf="validarRol()">Detalle Pago</button>
-      <button mat-button routerLink="components/chatgpt" >ChatGPT</button>
+      <button mat-button [matMenuTriggerFor]="menuUsuarios" *ngIf="role == 'ADMIN'" ><mat-icon>person</mat-icon>Usuarios</button>
+      <button mat-button [matMenuTriggerFor]="menuRoles" *ngIf="role == 'ADMIN'" ><mat-icon>face</mat-icon>Roles</button>
+      <button mat-button [matMenuTriggerFor]="menuMembresias" *ngIf="validarRol()">	<mat-icon>card_membership</mat-icon>Membresias</button>
+      <button mat-button [matMenuTriggerFor]="menuTDispositivo" *ngIf="validarRol()"><mat-icon>devices_other</mat-icon>Tipo Dispositivo</button>
+      <button mat-button [matMenuTriggerFor]="menuDispositivo" *ngIf="validarRol()"><mat-icon>devices</mat-icon>Dispositivos</button>
+      <button mat-button [matMenuTriggerFor]="menuMetoPago" *ngIf="validarRol()"><mat-icon>credit_card</mat-icon>Metodo Pago</button>
+      <button mat-button [matMenuTriggerFor]="menuComprobantePago" *ngIf="validarRol()"><mat-icon>file_copy</mat-icon>Comprobante Pago</button>
+      <button mat-button [matMenuTriggerFor]="menuDetallePago" *ngIf="validarRol()"><mat-icon> insert_drive_file</mat-icon>Detalle Pago</button>
+      <button mat-button [matMenuTriggerFor]="menuReportes" *ngIf="validarRol()"><mat-icon>graphic_eq</mat-icon>Reportes</button>
+      <button mat-button [matMenuTriggerFor]="menuSalir" *ngIf="validarRol()"><mat-icon>supervised_user_circle</mat-icon>Usuario</button>
       <a class="nav-link active" aria-current="page" routerLink="components/chatgpt" class="btn-neon">
         <span id="span1"></span>
         <span id="span2"></span>
         <span id="span3"></span>
         <span id="span4"></span>
-        CHAT GPT
+        <mat-icon>all_inclusive</mat-icon> CHAT GPT
+        <mat-icon>all_inclusive</mat-icon>
     </a>
-      <button mat-button [matMenuTriggerFor]="menuReportes" *ngIf="validarRol()">Reportes</button>
-      <button mat-button [matMenuTriggerFor]="menuSalir" *ngIf="validarRol()">Usuario</button>
     </div>
 
   </mat-sidenav>
@@ -79,6 +77,8 @@
           <button mat-menu-item routerLink="components/reportes/reporte-consumo-total-horas"*ngIf="role == 'ADMIN'"> R Consumo total de horas</button>
           <!-- Agrega más elementos de menú si es necesario -->
           <button mat-menu-item routerLink="components/reportes/reporte-users-membresias-monto"*ngIf="role == 'ADMIN'"> R Usuarios por Membresia y Monto Recaudado</button>
+          <button mat-menu-item routerLink="components/reportes/reporte-cantidad-users"*ngIf="role == 'ADMIN'"> R Cantidad de usuarios</button>
+          <button mat-menu-item routerLink="components/reportes/reporte-suma-x-metodo-pago"*ngIf="role == 'ADMIN'"> R Suma de Cantidad de Pago por Metodo de Pago</button>
         </mat-menu>
 
       </mat-menu>

@@ -2,8 +2,7 @@
 
   <div class="card">
 
-      <div class="card-header bg-dark text-light"><h1>ChatGPT</h1></div>
-
+    <div class="card-header bg-dark text-light"><h1 style="color: white;">ChatGPT</h1></div>
       <div class="card-body">
 
           <div class="container">
@@ -15,7 +14,7 @@
               </div>
 
           </div>
-          
+
           <input [(ngModel)]="message" class="form-control" name="message" placeholder="Escribe tu mensaje aqui..">
           <button class="btn btn-outline-primary mt-2 mr-2" (click)="sendMessage()">Enviar</button>
           <button class="btn btn-outline-danger mt-2" (click)="limpiar()">Limpiar</button>

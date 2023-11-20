@@ -22,13 +22,8 @@ export class RolesService {
     });
   }
   insert(authority: string, user_id: number) {
-    let token = sessionStorage.getItem('token');
 
-    return this.http.post(`${this.url}?authority=${authority}&user_id=${user_id}`, null,{
-      headers: new HttpHeaders()
-        .set('Authorization', `Bearer ${token}`)
-        .set('Content-Type', 'application/json'),
-    });
+    return this.http.post(`${this.url}?authority=${authority}&user_id=${user_id}`, null);
   }
   setList(listaNueva: Roles[]) {
     this.listaCambio.next(listaNueva);
@@ -67,6 +62,9 @@ export class RolesService {
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
+  }
+  postrol(){
+    return this.http.post(`${this.url}/insrollog`,null);
   }
 
 }

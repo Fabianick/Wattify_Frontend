@@ -1,8 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Comprobantepago } from '../models/comprobante-pago';
+import { SumaTotal_X_MetodoPagoDTO } from '../models/SumaTotal_X_MetodoPagoDTO';
 const base_url = environment.base;
 
 @Injectable({
@@ -66,5 +67,13 @@ export class ComprobantePagoService {
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),
     });
+  }
+  getsum(): Observable<SumaTotal_X_MetodoPagoDTO[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<SumaTotal_X_MetodoPagoDTO[]>(`${this.url}/SumaTotalXMetodoPago`, {
+      headers: new HttpHeaders()
+      .set('Authorization', `Bearer ${token}`)
+      .set('Content-Type', 'application/json')
+    })
   }
 }

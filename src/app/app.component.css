@@ -1,5 +1,5 @@
 .mat-toolbar {
-  background-color: rgb(227, 230, 59);
+  background-color: #FFD60A;
   color: rgb(0, 0, 0);
 }
 .sidebar-content {
@@ -15,7 +15,7 @@
 }
 
 .mat-sidenav{
-  background-color: rgb(227, 230, 59);
+  background-color: #FFD60A;
 }
 
 .btn-neon{
@@ -84,4 +84,14 @@
   bottom: 100%;
   transition: 1s;
   transition-delay: 0.75s;
+}
+
+.custom-sidebar {
+  background-color: #FFD60A;
+}
+
+.custom-sidebar .sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

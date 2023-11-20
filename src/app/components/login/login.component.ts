@@ -6,6 +6,8 @@ import { JwtRequest } from 'src/app/models/jwtRequest';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Users } from 'src/app/models/users';
 import { UsersService } from 'src/app/services/users.service';
+import { Roles } from 'src/app/models/roles';
+import { RolesService } from 'src/app/services/roles.service';
 
 @Component({
   selector: 'app-login',
@@ -14,12 +16,15 @@ import { UsersService } from 'src/app/services/users.service';
 })
 export class LoginComponent implements OnInit{
   constructor(private loginService: LoginService, private router: Router, private snackBar: MatSnackBar,
-    private uS:UsersService,private formBuilder: FormBuilder, private route: ActivatedRoute ){}
+    private uS:UsersService,private formBuilder: FormBuilder, private route: ActivatedRoute,
+    private rS: RolesService ){}
   username: string = ""
   password: string = ""
   mensaje: string = ""
   form: FormGroup = new FormGroup({});
   usuario: Users = new Users();
+  rols: Roles = new Roles();
+
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -50,12 +55,15 @@ export class LoginComponent implements OnInit{
       this.uS.insert(this.usuario).subscribe((data) => {
         this.uS.list().subscribe((data) => {
           this.uS.setList(data);
+          this.rS.postrol();
         });
       });
 
-      this.router.navigate(['components/usuarios']);
+      this.router.navigate(['home']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
+      this.snackBar.open(this.mensaje, "Aviso",{duration:2000});
+
     }
   }
 

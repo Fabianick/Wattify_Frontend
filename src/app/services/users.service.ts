@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Users } from '../models/users';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UsuarioCantidadDTO } from '../models/UsuarioCantidadDTO';
 const base_url = environment.base;
 
 @Injectable({
@@ -23,13 +24,7 @@ export class UsersService {
   }
 
   insert(use: Users) {
-    let token = sessionStorage.getItem('token');
-
-    return this.http.post(this.url, use,{
-      headers: new HttpHeaders()
-      .set('Authorization', `Bearer ${token}`)
-      .set('Content-Type', 'application/json'),
-    });
+    return this.http.post(this.url, use);
   }
 
   setList(listaNueva: Users[]) {
@@ -61,6 +56,15 @@ export class UsersService {
     let token = sessionStorage.getItem('token');
 
     return this.http.delete(`${this.url}/${id}`,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+
+  getCount():Observable<UsuarioCantidadDTO[]>{
+    let token = sessionStorage.getItem('token');
+    return this.http.get<UsuarioCantidadDTO[]>(`${this.url}/cantidadBygenero`,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
         .set('Content-Type', 'application/json'),

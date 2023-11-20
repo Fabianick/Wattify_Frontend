@@ -35,13 +35,15 @@ export class CreaeditaDispositivosComponent implements OnInit {
       this.edicion = data['id'] != null;
       this.init();
     });
+    const fechaActual = moment().format('YYYY-MM-DD');
+
     this.form = this.formBuilder.group({
       idDispositivo: [''],
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
       consumoHora: ['', [Validators.required]],
       horasEncendidas: ['', Validators.required],
-      fecha: ['', Validators.required],
+      fecha: [fechaActual],
       tipoDispositivo: ['', Validators.required],
     });
     this.tdS.list().subscribe((data) => {
