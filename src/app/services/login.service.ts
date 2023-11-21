@@ -9,7 +9,7 @@ export class LoginService {
 
   constructor(private http: HttpClient) { }
   login(request: JwtRequest) {
-    return this.http.post("http://localhost:8080/authenticate", request);
+    return this.http.post("https://frontedwattify.web.app/authenticate", request);
   }
   verificar() {
     let token = sessionStorage.getItem("token");
